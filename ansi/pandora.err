@@ -1,0 +1,61 @@
+PANDORA Errors and Warnings [version 7.0 as of 05-Apr-2004]
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=302       SPIN/PARITY=(9/2-)              **J INCONSISTENT WITH L
+*****185W   L 302          9/2-                              GE 5                A   
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=302       SPIN/PARITY=(9/2-)              **PI INCONSISTENT WITH L
+*****185W   L 302          9/2-                              GE 5                A   
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=570       SPIN/PARITY=(11/2-)             **J INCONSISTENT WITH L
+*****185W   L 570       AP(11/2-)                            GE 5                C   
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=570       SPIN/PARITY=(11/2-)             **PI INCONSISTENT WITH L
+*****185W   L 570       AP(11/2-)                            GE 5                C   
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=921       SPIN/PARITY=                    **J INCONSISTENT WITH L
+*****185W   L 921                                            3                   X   
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **J INCONSISTENT WITH L
+*****185W   L 1149                                           1                   Y   
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **J INCONSISTENT WITH L
+*****185W   L 1185                                           1                       
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **J INCONSISTENT WITH L
+*****185W   L 1219      AP(9/2-)                            ( GE 5)              J   
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **PI INCONSISTENT WITH L
+*****185W   L 1219      AP(9/2-)                            ( GE 5)              J   
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **J INCONSISTENT WITH L
+*****185W   L 1222                                           1                       
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **J INCONSISTENT WITH L
+*****185W   L 1290                                           1                       
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **J INCONSISTENT WITH L
+*****185W   L 1428                                           1                       
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **J INCONSISTENT WITH L
+*****185W   L 1542                                           1                       
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **J INCONSISTENT WITH L
+*****185W   L 1722                                           1                   Y   
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **J INCONSISTENT WITH L
+*****185W   L 1745                                           1                   Y   
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **J INCONSISTENT WITH L
+*****185W   L 1800                                           1                   Y   
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **J INCONSISTENT WITH L
+*****185W   L 1830      AP                                   1                   Y   
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **J INCONSISTENT WITH L
+*****185W   L 1886                                           1                   Y   
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **J INCONSISTENT WITH L
+*****185W   L 1986                                           1                   X   
+ 
+<W>186W(D,T),184W(D,P)                ADOPTED LEVEL=1118      SPIN/PARITY=(5/2-)              **J INCONSISTENT WITH L
+*****185W   L 2031                                           1                   Y   

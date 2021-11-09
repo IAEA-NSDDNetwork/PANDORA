@@ -1,0 +1,2027 @@
+<HTML>
+<HEAD>
+<TITLE>FORTRAN 95 Nuclear Structure Data File Library</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H2 ALIGN=CENTER>FORTRAN 95 Nuclear Structure Data File Library<BR>
+  November 14, 2005
+</H2>
+<P>
+This document describes the contents of the subprogram library NSDFLIB95 which
+ contains FORTRAN 95 versions of the subprogram library NSDLIB and additional
+ subprogram libraries. See <A HREF="nsdflib95dif.html">nsdflib95dif.html</A> for
+ summary of differences excluding the conversion from FORTRAN 77 to FORTRAN 95.
+</P>
+<P>
+With  the  exception   of   the   subroutines   GET_COMMAND_LINE,
+ OPEN_SORT_INPUT, and OPEN_SORT_OUTPUT, all subprograms in this library
+ are written to conform to the ANSI standard for FORTRAN  95  and  are,
+ therefore, generally machine independent.
+</P>
+<TABLE ALIGN=CENTER>
+<TR>
+<TH COLSPAN=2>List of Subprograms</TH>
+</TR>
+<TR VALIGN=TOP>
+<TD><OL COMPACT>
+    <LI><A HREF="#String">String Processing Subprograms</A>
+        <OL COMPACT TYPE="a">
+        <LI><A HREF="#LENSTR">INTEGER(KIND=4) FUNCTION LENSTR</A></LI>
+        <LI><A HREF="#LSTRING">INTEGER(KIND=4) FUNCTION LSTRING</A></LI>
+        <LI><A HREF="#TYPSTR">INTEGER(KIND=4) FUNCTION TYPSTR</A></LI>
+        <LI><A HREF="#ADDSTR">SUBROUTINE ADDSTR</A></LI>
+        <LI><A HREF="#DELSTR">SUBROUTINE DELSTR</A></LI>
+        <LI><A HREF="#SQZSTR">SUBROUTINE SQZSTR</A></LI>
+        <LI><A HREF="#REPCHR">SUBROUTINE REPCHR</A></LI>
+        <LI><A HREF="#REPSTR">SUBROUTINE REPSTR</A></LI>
+        <LI><A HREF="#INDEXF">INTEGER(KIND=4) FUNCTION INDEXF</A></LI>
+        <LI><A HREF="BREAK">INTEGER(KIND=4) FUNCTION BREAK</A></LI>
+        <LI><A HREF="#SPAN">INTEGER(KIND=4) FUNCTION SPAN</A></LI>
+        <LI><A HREF="#PADLFT">SUBROUTINE PADLFT</A></LI>
+        <LI><A HREF="#UPSTR">SUBROUTINE UPSTR</A></LI>
+        <LI><A HREF="#LOSTR">SUBROUTINE LOSTR</A></LI>
+        <LI><A HREF="#UPCASE">CHARACTER(LEN=*) FUNCTION UPCASE</A></LI>
+        <LI><A HREF="#LOCASE">CHARACTER(LEN=*) FUNCTION LOCASE</A></LI>
+        <LI><A HREF="#KSEARCH">INTEGER(KIND=4) FUNCTION KSEARCH</A></LI>
+        <LI><A HREF="#TOKEN">SUBROUTINE TOKEN</A><BR>
+            <A HREF="#TOKENL">ENTRY TOKENL</A></LI>
+        <LI><A HREF="#SCOUNT">SUBROUTINE SCOUNT</A></LI>
+        <LI><A HREF="#SUPBLANK">SUBROUTINE SUPBLANK</A></LI>
+        <LI><A HREF="#NOLBLANK">SUBROUTINE NOLBLANK</A><BR>
+            <A HREF="#LBSUP">ENTRY LBSUP</A><BR>
+            <A HREF="#NOLBLANKL">ENTRY NOLBLANKL</A></LI>
+        <LI><A HREF="#TRANSNUC">SUBROUTINE TRANSNUC</A></LI>
+        </OL>
+    </LI>
+    <LI><A HREF="#Conversion">Number to String and String to Number Subprograms</A>
+        <OL COMPACT TYPE="a">
+        <LI><A HREF="#VALSTR">REAL(KIND=4) FUNCTION VALSTR</A><BR>
+            <A HREF="#DVALST">REAL(KIND=8) FUNCTION DVALST</A></LI>
+        <LI><A HREF="#IVLSTR">INTEGER(KIND=4) FUNCTION IVLSTR</A></LI>
+        <LI><A HREF="#RLSCN">INTEGER(KIND=4) FUNCTION RLSCN</A><BR>
+            <A HREF="#DRLSCN">INTEGER(KIND=4) FUNCTION DRLSCN</A></LI>
+        <LI><A HREF="#INTSCN">INTEGER(KIND=4) FUNCTION INTSCN</A></LI>
+        <LI><A HREF="#NUMSTR">SUBROUTINE NUMSTR</A></LI>
+        <LI><A HREF="#CNVS2U">SUBROUTINE CNVS2U</A><BR>
+            <A HREF="#DCNVSU">ENTRY DCNVSU</A></LI>
+        <LI><A HREF="#ZSYM">SUBROUTINE ZSYM</A><BR>
+            <A HREF="#IZEL">ENTRY IZEL</A><BR>
+            <A HREF="#IZELW">ENTRY IZELW</A></LI>
+        <LI><A HREF="#CNVU2S">SUBROUTINE CNVU2S</A><BR>
+            <A HREF="#DCNVUS">ENTRY DCNVUS</A></LI>
+        <LI><A HREF="#SUPALF">SUBROUTINE SUPALF</A></LI>
+        <LI><A HREF="#SUPEMB">SUBROUTINE SUPEMB</A></LI>
+        <LI><A HREF="#IVRFLW">LOGICAL(KIND=4) FUNCTION IVRFLW</A></LI>
+        <LI><A HREF="#KNVIX">SUBROUTINE KNVIX</A></LI>
+        <LI><A HREF="#SCALDX">SUBROUTINE SCALDX</A></LI>
+        <LI><A HREF="#SCALX">SUBROUTINE SCALX</A></LI>
+        <LI><A HREF="#SCAL10">SUBROUTINE SCAL10</A></LI>
+        <LI><A HREF="KNVI2S">SUBROUTINE KNVI2S</A></LI>
+        </OL>
+     </LI>
+     </OL>
+</TD>
+<TD><OL COMPACT>
+     <LI VALUE="3"><A HREF="#Math">Mathematics Subprograms</A>
+         <OL COMPACT TYPE="a">
+        <LI><A HREF="#UADD">SUBROUTINE UADD</A></LI>
+        <LI><A HREF="#USUB">SUBROUTINE USUB</A></LI>
+        <LI><A HREF="#UMULT">SUBROUTINE UMULT</A></LI>
+        <LI><A HREF="#UDIV">SUBROUTINE UDIV</A></LI>
+        <LI><A HREF="#GAMA">COMPLEX(KIND=4) FUNCTION GAMA</A></LI>
+        <LI><A HREF="#GAMZ">COMPLEX(KIND=4) FUNCTION GAMZ</A></LI>
+        <LI><A HREF="#GAM1">COMPLEX(KIND=4) FUNCTION GAM1</A></LI>
+        <LI><A HREF="#GAM2">COMPLEX(KIND=4) FUNCTION GAM2</A></LI>
+        <LI><A HREF="#HYPERG">COMPLEX(KIND=4) FUNCTION HYPERG</A></LI>
+        </OL>
+     </LI>
+     <LI><A HREF="#Time">Time &amp; Date Subprograms</A>
+         <OL COMPACT TYPE="a">
+        <LI><A HREF="#GET_TIME">SUBROUTINE GET_TIME</A></LI>
+        <LI><A HREF="#DATE_20">SUBROUTINE DATE_20</A></LI>
+        <LI><A HREF="#IDATE_20">SUBROUTINE IDATE_20</A></LI>
+        </OL>
+     </LI>
+     <LI><A HREF="#Command">Command Line Subprogram</A>
+        <OL COMPACT TYPE="a">
+        <LI><A HREF="#GET_COMMAND_LINE">SUBROUTINE GET_COMMAND_LINE</A></LI>
+        </OL>
+     </LI>
+     <LI><A HREF="#File">File Manipulation Subprogram</A>
+         <OL COMPACT TYPE="a">
+         <LI><A HREF="#DELETE_FILE">SUBROUTINE DELETE_FILE</A></LI>
+	 </OL>
+     <LI><A HREF="#Sorting">Sorting Subprograms</A>
+         <OL COMPACT TYPE="a">
+        <LI><A HREF="#SORT">SUBROUTINE SORT</A><BR>
+            <A HREF="#SET_SORT_FILE">ENTRY SET_SORT_FILE</A></LI>
+        <LI><A HREF="#FSORT">SUBROUTINE FSORT</A></LI>
+        <LI><A HREF="#READ_SORT_IN">SUBROUTINE READ_SORT_IN</A></LI>
+        <LI><A HREF="#SORT_WRITE">SUBROUTINE SORT_WRITE</A></LI>
+        <LI><A HREF="#SRTKEYS">SUBROUTINE SRTKEYS</A></LI>
+        <LI><A HREF="#OPEN_SORT_INPUT">SUBROUTINE OPEN_SORT_INPUT</A></LI>
+        <LI><A HREF="#OPEN_SORT_OUTPUT">SUBROUTINE OPEN_SORT_OUTPUT</A></LI>
+        </OL>
+     </LI>
+</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=2>
+<H3 ALIGN=CENTER><A NAME="String">String Processing Library</A></H3>
+<P>
+FORTRAN 95 provides many great and wondrous features  for  string processing.
+ However, there are some features that are not provided for by the standard.
+ Therefore, this subprogram library has been written to include some useful
+ subroutines and functions to manipulate character strings or return information
+ about character strings.
+</P>
+<H4 ALIGN=CENTER><A NAME="LENSTR">INTEGER(KIND=4) FUNCTION LENSTR (string)</A></H4>
+<P>
+Function LENSTR will return the character position of the last non-blank (or
+ non-null) character of the argument string. This value also represents the
+ length of the string viewed as terminating with the last non-blank (or non-null)
+ character.
+</P>
+<P>Example:
+<PRE>
+         CHARACTER(LEN=10) :: str
+         INTEGER(KIND=4) :: i,j
+         INTEGER(KIND=4),INTRINSIC :: LEN
+         INTEGER(KIND=4),EXTERNAL :: LENSTR
+         str = 'ABC'
+         i = LEN(str)
+         j = LENSTR(str)
+         WRITE(*,*) i, j
+</PRE>
+will display the values 10, 3.
+</P>
+<P>
+See also subroutine <A HREF="#SCOUNT">SCOUNT</A> and function
+<A HREF="#LSTRING">LSTRING</A>.
+</P>
+<P>
+<B>Note:</B> The FORTRAN 95 intrinsic function  LEN_TRIM  provides a
+ similar functionality.
+</P>
+<H4 ALIGN=CENTER><A NAME="LSTRING">INTEGER(KIND=4) FUNCTION LSTRING (string)</A></H4>
+<P>
+Function LSTRING will return the position of the last non-blank character in a
+string.
+</P>
+<P>Example:
+<PRE>
+         CHARACTER(LEN=10) :: str
+         INTEGER(KIND=4) :: i,j
+         INTEGER(KIND=4),INTRINSIC :: LEN
+         INTEGER(KIND=4),EXTERNAL :: LSTRING
+         str = 'ABC'
+         i = LEN(str)
+         j = LSTRING(str)
+         WRITE(*,*) i, j
+</PRE>
+will display the values 10, 3.
+</P>
+<P>
+See also subroutine <A HREF="#SCOUNT">SCOUNT</A> and function
+<A HREF="#LENSTR">LENSTR</A>.
+</P>
+<P>
+<B>Note:</B> The FORTRAN 95 intrinsic function  LEN_TRIM  provides a
+ similar functionality.
+</P>
+<H4 ALIGN=CENTER><A NAME="TYPSTR">INTEGER(KIND=4) FUNCTION TYPSTR (string)</A></H4>
+<P>
+Function TYPSTR will scan the argument <B>string</B> and return one of the
+ following values as the type of the string:
+<TABLE>
+<TR>
+<TD>&nbsp;0 if the string contains all blanks.<BR>
+    &nbsp;1 if the string contains all digits (0 - 9) only.<BR>
+    &nbsp;2 if the string contains all upper case letters (A - Z).<BR>
+    -1 if the string contains other characters or is a mixture of types.<BR>
+    -2 if the string is a FORTRAN number
+</TD>
+</TR>
+</TABLE>
+Example:
+<PRE>
+         INTEGER(KIND=4),EXTERNAL :: TYPSTR
+         CHARACTER(LEN=5) :: string
+         string = '13579'
+         WRITE(*,*) TYPSTR(string)
+</PRE>
+   will display the value 1.
+</P>
+<P>Trailing blanks are ignored but leading blanks count as non-numeric,
+ non-alpha characters except that for FORTRAN numbers beginning blanks are also
+ allowed.
+</P>
+<P>
+<B>Note:</B> In determining a FORTRAN number the functions
+ <A HREF="#INTSCN">INTSCN</A> and <A HREF="#RLSCN">RLSCN</A>
+ are used. Any side effects of these functions may affect the determination.
+</P>
+<H4 ALIGN=CENTER><A NAME="ADDSTR">SUBROUTINE ADDSTR (string, pos, new)</A></H4>
+<P>
+Subroutine ADDSTR will insert the <B>new</B> string into the existing
+ <B>string</B> by moving the characters of the existing string starting at the
+ specified position, <B>pos</B>, to the right by an amount equal to the length
+ of the <B>new</B> string.
+</P>
+<P>
+   Example:
+<PRE>
+         CHARACTER(LEN=10) :: string
+         string = 'ABCD'
+         CALL ADDSTR(string, 3, 'XYZ')
+         WRITE(*,*) string
+</PRE>
+will display the value 'ABXYZCD   '.
+</P>
+<P>
+<B>Note:</B> If the resulting string exceeds the length of the first argument,
+ then the resulting string will be truncated on the right before the argument is
+ returned from the subroutine.
+</P>
+<H4 ALIGN=CENTER><A NAME="DELSTR">SUBROUTINE DELSTR (string, pos, len)</A></H4>
+<P>
+Subroutine DELSTR will delete the specified number of characters, <B>len</B>,
+ from the  argument <B>string</B> starting at the specified position,
+ <B>pos</B>. The remaining characters to the right will be moved left. The
+ resulting string will be padded on the right with blanks to fill out the
+ argument <B>string</B>'s length.
+</P>
+<P>
+   Example:
+<PRE>
+         CHARACTER(LEN=10) :: string
+         string = 'ABXYZCD'
+         CALL DELSTR(string, 3, 3)
+         WRITE(*,*) string
+</PRE>
+will display the value 'ABCD      '.
+</P>
+<H4 ALIGN=CENTER><A NAME="SQZSTR">SUBROUTINE SQZSTR (string, char)</A></H4>
+<P>
+Subroutine SQZSTR will scan the argument <B>string</B> looking for the
+ specified character, <B>char</B>. When one is found it will be deleted (as in
+ <A HREF="#DELSTR">DELSTR</A>). The scan will continue looking for all of the
+ occurrences of the specified character.  The possibly shorter string will be
+ padded on the right with blanks as needed.
+</P>
+<P>
+   Example:
+<PRE>
+         CHARACTER(LEN=10) :: STRING
+         string = 'NOW IS THE'
+         CALL SQZSTR(string, ' ')
+         WRITE(*,*) string
+</PRE>
+   will display the value 'NOWISTHE  '
+</P>
+<P>
+See also subroutines <A HREF="#NOLBLANK">NOLBLANK</A>, <A HREF="#LBSUP">LBSUP</A>,
+ <A HREF="#NOLBLANKL">NOLBLANKL</A>, and <A HREF="#SUPBLANK">SUPBLANK</A>.
+</P>
+<H4 ALIGN=CENTER><A NAME="REPCHR">SUBROUTINE REPCHR (string, old, new)</A></H4>
+<P>
+Subroutine REPCHR will scan the argument <B>string</B> looking for any of the
+ characters that exist within the <B>old</B> string. If any are found, they will
+ be replaced by the corresponding character from the <B>new</B> string.  The
+ original and modified strings should be the same length.
+</P>
+<P>
+   Example:
+<PRE>
+         CHARACTER(LEN=10) :: string
+         string = 'NOW IS THE'
+         CALL REPCHR(string, ' AEIOU', '_aeiou')
+         WRITE(*,*) string
+</PRE>
+will display the value 'NoW_iS_THe'.
+</P>
+<P>See also subroutine <A HREF="#REPSTR">REPSTR</A>.
+</P>
+<H4 ALIGN=CENTER><A NAME="REPSTR">SUBROUTINE REPSTR (string, old, new)</A></H4>
+<P>
+Subroutine REPSTR will scan the argument <B>string</B> searching for all
+ occurrences of the <B>old</B> string. If any are found, they will all be
+ replaced by the <B>new</B> string. If the new string is CHAR(0)  (<I>i.e.</I>,
+ a string of length 1 with value the character null), then the <B>old</B> string
+ will be removed and nothing will replace it. The length of the <B>old</B>
+ and <B>new</B> strings may be greater than or equal to one byte.
+</P>
+<P>
+Example:
+<PRE>
+         CHARACTER(LEN=10) :: string
+         string = 'NOW IS THE'
+         CALL REPSTR(string, 'IS', 'WAS')
+         WRITE(*,*) string
+</PRE>
+will display the value 'NOW WAS TH'.
+</P>
+<P>Please note that the subroutine REPSTR will call the  subroutines
+ <A HREF="#DELSTR">DELSTR</A> and <A HREF="#ADDSTR">ADDSTR</A> to delete the old
+ string and add the new string (if needed).  Any side effects of these
+ subroutines will hold true for subroutine REPSTR.
+</P>
+<P>See also subroutine <A HREF="#REPCHR">REPCHR</A>.
+</P>
+<H4 ALIGN=CENTER><A NAME="INDEXF">INTEGER(KIND=4) FUNCTION INDEXF
+   (string, pos, substr)</A></H4>
+<P>
+        Function INDEXF behaves in  a  manner  similar  to  the  standard
+   function  INDEX  except  that INDEXF controls where the search for the
+   sub-string should begin with the argument <B>pos</B>.   Occurrences  of  the
+   sub-string  which  precede  position  pos will not be considered.  The
+   value returned will be zero (0) or the index of  the  substring, <B>substr</B>  with
+   respect to the beginning of <B>string</B> as is the case with INDEX.
+</P>
+<P>
+   Example:
+<PRE>
+         INTEGER(KIND=4),EXTERNAL :: INDEXF
+         INTEGER(KIND=4) :: i
+         CHARACTER(LEN=10) :: string
+         string = 'ABC ABC AB'
+         i = INDEXF(string, 3, 'A')
+         WRITE(*,*) i
+</PRE>
+   will display the value 5.
+</P>
+<H4 ALIGN=CENTER><A NAME="BREAK">INTEGER(KIND=4) FUNCTION BREAK
+   (string, pos, brkstr)</A></H4>
+<P>
+        Function BREAK  will  scan  the  argument  <B>string</B>  starting  from
+   position  <B>pos</B>  looking  for  the first character (the break character)
+   which is one of the characters in the <B>brkstr</B>  string.   If  found,  the
+   position  of  the  break character in string will be returned.  If not
+   found, the length of string  plus  one  (<I>i.e.</I>,  the  position  of  the
+   character  after  the  last character in string) will be returned.  If
+   the starting position, pos, is not within the limits of  the  argument
+   string,  the  position pos will be returned.  Characters should not be
+   repeated in the break string.
+</P>
+<P>
+   Example:
+<PRE>
+         CHARACTER(LEN=10) :: string
+         INTEGER(KIND=4),EXTERNAL :: BREAK
+         INTEGER(KIND=4) :: i
+         string = 'NOW IS THE'
+         i = BREAK(string, 3, 'AEIOU')
+         WRITE(*,*) i
+</PRE>
+   will display the value 5.
+</P>
+<P>See also integer function <A HREF="#SPAN">SPAN</A>.
+</P>
+<H4 ALIGN=CENTER><A NAME="SPAN">INTEGER(KIND=4) FUNCTION SPAN
+   (string, pos, spnstr)</A></H4>
+<P>
+        Function  SPAN  will  scan  the  argument  string  starting  from
+   position  <B>pos</B>  looking  for  the first character (the break character,
+   <B>spnstr</B>) after <B>pos</B>
+   which is <I>not</I> one of the characters in the span string.  If found,
+   the
+   position  of  the  break character in string will be returned.  If not
+   found, the length of string  plus  one  (<I>i.e.</I>,  the  position  of  the
+   character  after  the  last character in string) will be returned.  If
+   the starting position, <B>pos</B>, is not within the limits of  the  argument
+   string,  the  position pos will be returned.  Characters should not be
+   repeated in the break string.
+</P>
+<P>
+   Example:
+<PRE>
+         CHARACTER(LEN=10) :: STRING
+         INTEGER(KIND=4),EXTERNAL :: SPAN
+         INTEGER(KIND=4) :: i
+         STRING = '   NOW THE'
+         i = SPAN(string, 1, ' ')
+         WRITE(*,*) i
+</PRE>
+   will display the value 4.
+</P>
+<P>See also integer function <A HREF="#BREAK">BREAK</A>.
+</P>
+<H4 ALIGN=CENTER><A NAME="PADLFT">SUBROUTINE PADLFT (string, len)</A></H4>
+<P>
+        Subroutine PADLFT will insert blanks to the left of the  argument
+   <B>string</B> to make the string <B>len</B> characters long.  If len is less than or
+   equal to the length of the string  (as  defined  by  integer  function
+   <A HREF="#LENSTR">LENSTR</A>)  or  greater  than the length of the string (as defined by the
+   intrinsic integer function LEN), no action will be taken.
+</P>
+<P>Example:
+<PRE>
+         CHARACTER(LEN=10) :: string
+         string='ABC'
+         CALL PADLFT(string,6)
+         WRITE(*,*) string
+</PRE>
+   will display '<FONT FACE="COURIER">&nbsp;&nbsp;&nbsp;ABC</FONT>'.
+</P>
+<H4 ALIGN=CENTER><A NAME="UPSTR">SUBROUTINE UPSTR (string)</A></H4>
+<P>Subroutine UPSTR will convert a <B>string</B> to all upper case.
+</P>
+<P>Example:
+<PRE>
+      CHARACTER(LEN=10) :: string
+      string='ab12c'
+      Call UPSTR(string)
+      WRITE(*,*)string
+</PRE>
+will display 'AB12C'.
+</P>
+<P>See also character function <A HREF="#UPCASE">UPCASE</A>.</P>
+<H4 ALIGN=CENTER><A NAME="LOSTR">SUBROUTINE LOSTR (string)</A></H4>
+<P>Subroutine LOSTR will convert a <B>string</B> to all lower case.
+</P>
+<P>Example:
+<PRE>
+      CHARACTER(LEN=10) :: string
+      string='AB12C'
+      Call LOSTR(string)
+      WRITE(*,*)string
+</PRE>
+will display 'ab12c'.
+</P>
+<P>See also character function <A HREF="#LOCASE">LOCASE</A>.</P>
+<H4 ALIGN=CENTER><A NAME="UPCASE">CHARACTER(LEN=*) FUNCTION UPCASE (string)</A></H4>
+<P>Function UPCASE will convert a <B>string</B> to all upper case.
+</P>
+<P>Example:
+<PRE>
+      CHARACTER(LEN=10) :: string,newstring
+      CHARACTER(LEN=10),EXTERNAL :: UPCASE
+      string='ab12c'
+      newstring=UPCASE(string)
+      WRITE(*,*)newstring
+</PRE>
+will display 'AB12C'.
+</P>
+<P>See also subroutine <A HREF="#UPSTR">UPSTR</A>.</P>
+<H4 ALIGN=CENTER><A NAME="LOCASE">CHARACTER(LEN=*) FUNCTION LOCASE (string)</A></H4>
+<P>Function LOCASE will convert a <B>string</B> to all lower case.
+</P>
+<P>Example:
+<PRE>
+      CHARACTER(LEN=10) :: string,newstring
+      CHARACTER(LEN=10),EXTERNAL :: LOCASE
+      string='AB12C'
+      newstring=LOCASE(string)
+      WRITE(*,*)newstring
+</PRE>
+will display 'ab12c'.
+</P>
+<P>See also subroutine <A HREF="#LOSTR">LOSTR</A>.</P>
+<H4 ALIGN=CENTER><A NAME="KSEARCH">INTEGER(KIND=4) FUNCTION KSEARCH
+   (string, delim, idnum)</A></H4>
+<P>
+     Function KSEARCH will return the position of the  n<SUP>th</SUP>,
+ <B>idnum</B> occurence
+ of a delimiter, <B>delim</B>, in a <B>string</B>.  If the desired occurence is a negative
+ number zero is returned.  If the end of the string is  reached  before
+ the desired occurence, the length of the string+1 is returned.
+</P>
+<P>Example:
+<PRE>
+      CHARACTER(LEN=10) :: string
+      CHARACTER(LEN=1) :: delim
+      INTEGER(KIND=4),EXTERNAL :: KSEARCH
+      INTEGER(KIND=4) :: ipos
+      string='ABAB'
+      delim='B'
+      ipos=KSEARCH(string,delim,2)
+      WRITE(*,*) ipos
+</PRE>
+will display 4.
+</P>
+<H4 ALIGN=CENTER><A NAME="TOKEN">SUBROUTINE TOKEN (instr, delim, itok, outstr)<BR>
+   <A NAME="TOKENL">ENTRY TOKENL (instr, delim, itok, outstr, nstr)</A></H4>
+<P>
+     Subroutine TOKEN extracts a delimited sub-string, <B>delim</B> from a
+ string, <B>instr</B>.
+</P>
+<P>
+Example:
+<PRE>
+      CHARACTER(LEN=20) :: string,newstring
+      CHARACTER(LEN=2) :: delim
+      del='&&'
+      string='AB&&CD'
+      CALL TOKEN(string,delim,1,newstring)
+      WRITE(*,*)newstring
+</PRE>
+will display 'CD'.
+</P>
+<P>Entry TOKENL will also return the length of  the  new  string  in <B>nstr</B>.
+</P>
+<H4 ALIGN=CENTER><A NAME="SCOUNT">SCOUNT (string, lstring)</A></H4>
+<P>
+Subroutine SCOUNT will return the position of the last  non-blank
+ character.  This value also represents the length of the string viewed
+ as terminating with the last non-blank character.
+</P>
+<P>Example:
+<PRE>
+      CHARACTER(LEN=10) :: str
+      INTEGER(KIND=4) :: i,j
+      INTEGER(KIND=4),INTRINSIC :: LEN
+      str = 'ABC'
+      i = LEN(str)
+      CALL SCOUNT(str,j)
+      WRITE(*,*) i, j
+</PRE>
+will display the values 10, 3.
+</P>
+<P>See also integer function <A HREF="#LENSTR">LENSTR</A>.
+</P>
+<P><B>Note:</B>  The FORTRAN 95 intrinsic function  LEN_TRIM  provides a similar functionality.
+</P>
+<H4 ALIGN=CENTER><A NAME="SUPBLANK">SUBROUTINE SUPBLANK (string, nc)</A></H4>
+<P>
+Subroutine SUPBLANK will remove all blanks from a <B>string</B> and also
+ return the length of the resultant string in <B>nc</B>.
+</P>
+<P>Example:
+<PRE>
+      CHARACTER(LEN=10) :: string
+      INTEGER(KIND=4) :: nc
+      string = 'NOW IS THE'
+      CALL SUPBLANK(string, nc)
+      WRITE(*,*) string,nc
+</PRE>
+will display the values 'NOWISTHE  ' and 8.
+</P>
+<P>See also subroutines <A HREF="#NOLBLANK">NOLBLANK</A>,
+ <A HREF="#LBSUP">LBSUP</A>, <A HREF="#NOLBLANKL">NOLBLANKL</A>, and
+ <A HREF="#SQZSTR">SQZSTR</A>.
+</P>
+<H4 ALIGN=CENTER><A NAME="NOLBLANK">SUBROUTINE NOLBLANK (string)</A><BR>
+   <A NAME="LBSUP">ENTRY LBSUP (string)</A><BR>
+   <A NAME="NOLBLANKL">ENTRY NOLBLANKL (string, nstr)
+</H4>
+<P>
+     Subroutine NOLBLANK and entry LBSUP will  remove  leading  blanks
+ from a string.
+</P>
+<P>Example:
+<PRE>
+      CHARACTER(LEN=10) :: string
+      string='      ABC'
+      CALL LBSUP(string)
+      WRITE(*,*) STRING
+</PRE>
+will display 'ABC'.
+</P>
+<P>Entry NOLBLANKL will also return the length  of  the  resultant  string  in
+NSTR.
+</P>
+<P>See also subroutines <A HREF="#SQZSTR">SQZSTR</A> and <A HREF="#SUPBLANK">SUPBLANK</A>.
+</P>
+<H4 ALIGN=CENTER><A NAME="TRANSNUC">SUBROUTINE TRANSNUC
+  (instr, rstr, sstr, ierr)</A></H4>
+<P>
+     Subroutine  TRANSNUC   translates   between   nuclear   structure
+ presentation  of  nuclides  (AAAZZ)  and nuclear reaction presentation
+ (ZZ-AAA) as necessary.
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>instr</TH><TD>Input string to be translated</TD>
+<TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>rstr</TH><TD>Resultant reaction format string</TD>
+<TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>sstr</TH><TD>Resultant structure format string</TD>
+<TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>ierr</TH><TD>Error (=1) if input string cannot be parsed</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+</P>
+<HR NOSHADE SIZE=2>
+<H3 ALIGN=CENTER><A NAME="Conversion">Library of Number to String and
+  String to Number Routines</A></H3>
+<P>
+Most of the subprograms in this library deal with the  conversion
+   of numeric variables to string variables or the converse.
+</P>
+<H4 ALIGN=CENTER><A NAME="VALSTR">REAL(KIND=4) FUNCTION VALSTR (string)</A><BR>
+    <A NAME="DVALST">REAL(KIND=8) FUNCTION DVALST (string)</A>
+</H4>
+<P>
+Function VALSTR will scan  the  argument  <B>string</B>  looking  for  a
+   leading  real type numeric value (see <A HREF="#RLSCN">RLSCN</A>).  The value returned will
+   be the floating point value of the text scanned.
+</P>
+<P>Example:
+<PRE>
+         CHARACTER(LEN=10) :: string
+         REAL(KIND=4) :: value
+         REAL(KIND=4),EXTERNAL :: VALSTR
+         string = '123.45E2'
+         value = VALSTR(string)
+         WRITE(*,*) value
+</PRE>
+   will display the value 12345.00.
+</P>
+<P>
+Double precision function DVALST will return the double precision
+  value of the scanned string.
+</P>
+<P>Please note that  the  functions  <A HREF="#VALSTR">VALSTR</A>  and
+ <A HREF="#DVALST">DVLSTR</A>  call  the
+   functions  RLSCN  and  DRLSCN,  respectively,  to  obtain the returned
+   value.  Any side effects of these functions will  hold  true  for  the
+   functions VALSTR and DVALST.
+</P>
+<P>See also  integer  functions  <A HREF="#RLSCN">RLSCN</A> and
+ <A HREF="#DRLSCN">DRLSCN</A>  and  subroutine <A HREF="#CNVS2U">CNVS2U</A>.
+</P>
+<H4 ALIGN=CENTER><A NAME="IVLSTR">INTEGER(KIND=4) FUNCTION IVLSTR (string)</A></H4>
+<P>
+        Function IVLSTR will scan  the  argument  <B>string</B>  looking  for  a
+   leading  integer  type numeric value (see <A HREF="#INTSCN">INTSCN</A>).  The value returned
+   will be the integer value of the text scanned.  Please note  that  any
+   side  effects  of  the function INTSCN will hold true for the function
+   IVLSTR.
+</P>
+<P>Example:
+<PRE>
+         CHARACTER(LEN=10) :: string
+         INTEGER(KIND=4) :: ivalue
+         INTEGER(KIND=4),EXTERNAL :: IVLSTR
+         string = '123.45E2'
+         ivalue = IVLSTR(string)
+         WRITE(*,*) ivalue
+</PRE>
+   will display the value 123.
+</P>
+<P>See also integer function <A HREF="#INTSCN">INTSCN</A>.
+</P>
+<H4 ALIGN=CENTER><A NAME="RLSCN">INTEGER(KIND=4) FUNCTION RLSCN
+   (string, pos, value)</A><BR>
+   <A NAME="DRLSCN">INTEGER(KIND=4) FUNCTION DRLSCN (string, pos, dvalue)</A>
+</H4>
+<P>
+        Function RLSCN will  scan  the  argument  <B>string</B>  looking  for  a
+   leading  real  type  numeric  value.   Scanning begins at the position
+   specified by <B>pos</B> and continues to the  end  of  the  string.   Leading
+   blanks  will  be  ignored.   <B>Value</B>  is set to the numeric value of the
+   string (internal floating point form).  The function value is  set  to
+   the  position within the string where the numeric string ends plus one
+   (<I>i.e.</I>, the break character).
+</P>
+<P>The numeric string must have the form (after leading blanks):
+<TABLE>
+<TR>
+<TD NOWRAP>[sign] d+ ['.' d*] ['E' [sign] d+]</TD><TD>or</TD><TD>&nbsp;</TD>
+</TR>
+<TR>
+<TD NOWRAP>[sign]     '.' d+  ['E' [sign] d+]</TD>
+</TR>
+<TR>
+<TD COLSPAN=3 NOWRAP>where sign is '+' or '-',<BR>
+           d* is zero or more digits,<BR>
+           d+ is one or more digits,<BR>
+           '.' and 'E' are literal ('e' is also accepted),<BR>
+           brackets ([ and ]) delimit optional sequences.
+</TD>
+</TR>
+</TABLE>
+</P>
+<P>
+   Example:
+<PRE>
+         CHARACTER(LEN=10) :: string
+         INTEGER(KIND=4),EXTERNAL :: RLSCN
+         INTEGER(KIND=4) :: ipos
+         REAL(KIND=4) :: value
+         string = '123.45E2  '
+         ipos = RLSCN(string, 1, value)
+         WRITE(*,*) ipos, value
+</PRE>
+   will display the values 9, 12345.00.
+</P>
+<P>Integer function DRLSCN will perform the same function  as  RLSCN
+   but dvalue returned will be in double precision.
+</P>
+<P>
+        Also  note  that  since  the  ENSDF  formats  do  not  allow  "D"
+   floating-point  numbers  neither  RLSCN  or  DRLSCN recognize these as
+   FORTRAN numbers.
+</P>
+<P>
+See also real function <A HREF="#VALSTR">VALSTR</A>, double precision function
+  <A HREF="#DVALST">DVALST</A>, and subroutine <A HREF="#CNVS2U">CNVS2U</A>.
+<H4 ALIGN=CENTER><A NAME="INTSCN">INTSCN (string, pos, signed, value)</A></H4>
+</P>
+<P>
+        Function INTSCN will scan  the  argument  <B>string</B>  looking  for  a
+   leading  integer  type numeric value.  Scanning begins at the position
+   specified by <B>pos</B> and continues to the  end  of  the  string.   Leading
+   blanks  will  be  ignored.   The  search may be for a <B>signed</B> (signed =
+   .TRUE.) or unsigned (signed =  .FALSE.)  integer  value.   If  signed,
+   leading  plus  (+)  or  minus  (-) is allowed.  If unsigned, they will
+   terminate the scan as they are invalid for an unsigned integer.  <B>Value</B>
+   is  set  to  the  numeric value of the string (internal integer form).
+   The function value is set to the position within the string where  the
+   numeric  string  ends  plus  one  (i.e., the break character).  If the
+   starting position, pos, is not  within  the  limits  of  the  argument
+   string,  the  position  pos  will be returned and value will be set to
+   zero.  If the sign is the last character in the field (with no integer
+   following it), the position pos or the index of the last leading blank
+   will be returned and value will be set to zero.
+</P>
+<P>Example:
+<PRE>
+         CHARACTER(LEN=10) :: string
+         INTEGER(KIND=4),EXTERNAL :: INTSCN
+         INTEGER(KIND=4) :: ipos, jpos
+         INTEGER(KIND=4) :: ivalue,jvalue
+         string = '-123.45E2 '
+         ipos = INTSCN(string, 1, .TRUE.,  ivalue)
+         jpos = INTSCN(string, 1, .FALSE., jvalue)
+         WRITE(*,*) ipos, ivalue, jpos, jvalue
+</PRE>
+   will display the values 5, -123, 1, 0.
+</P>
+<P>See also integer function <A HREF="#IVLSTR">IVLSTR</A>.</P>
+<H4 ALIGN=CENTER><A NAME="NUMSTR">SUBROUTINE NUMSTR (number, string)</A></H4>
+<P>
+Subroutine NUMSTR will convert the argument integer <B>number</B>  into
+   character format and  store it in <B>string</B>.  The string will be right
+   justified and blank filled on the left.  If the length  of  string  is
+   too  small  to  contain the integer number, string will be filled with
+   asterisks (&quot;*&quot;'s).
+</P>
+<P>Example:
+<PRE>
+         CHARACTER(LEN=5) :: string
+         CALL NUMSTR(137, string)
+         WRITE(*,*) string
+</PRE>
+   will display the value '  137'.
+</P>
+<P>See also subroutine <A HREF="#KNVI2S">KNVI2S</A>.
+</P>
+<H4 ALIGN=CENTER><A NAME="CNVS2U">SUBROUTINE CNVS2U (sx, sdx, y ,dy)</A><BR>
+   <A NAME="DCNVSU">ENTRY DCNVSU (sx, sdx, x, dx)</A>
+</H4>
+<P>
+Subroutine CNVS2U converts strings  <B>sx</B>  and  <B>sdx</B>  into  two  real
+ numbers <B>y</B> and <B>dy</B> where <B>sdx</B> and <B>dy</B> are the
+ uncertainties of <B>sx</B> and <B>y</B>.
+</P>
+<P>
+Entry DCNVSU converts strings <B>sx</B> and <B>SDX</B> into two double
+ precision numbers <B>x</B> and <B>dx</B> where <B>sdx</B> and <B>dx</B> are the
+ uncertainties of <B>sx</B> and <B>x</B>.
+</P>
+<P>The strings <B>sx</B> and <B>sdx</B> represent a  value
+   and its uncertainty in the ENSDF or Nuclear Data Sheets notation; that
+   is a value and the uncertainty in the least significant digits of  the
+   value.   If  the  string <B>sx</B> is a single non-numeric character, zero is
+   returned for the number and uncertainty
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>sx</TH><TD>Input character string</TD>
+<TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>sdx</TH><TD>Input character string,<BR>uncertainty of SX</TD>
+<TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>y</TH><TD>output real number</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>dy</TH><TD>output real uncertainty</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>x</TH><TD>output double precision number</TD>
+<TD>REAL(KIND=8)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>dx</TH><TD>output double precision uncertainty</TD>
+<TD>REAL(KIND=8)</TD>
+</TR>
+</TABLE>
+   The input strings are stored in temporary strings of length 24.
+<P>See also integer functions <A HREF="#RLSCN">RLSCN</A> and
+ <A HREF="#DRLSCN">DRLSCN</A>  and  real  function <A HREF="#VALSTR">VALSTR</A>.
+</P>
+<H4 ALIGN=CENTER><A NAME="ZSYM">SUBROUTINE ZSYM (el, sym)</A></H4>
+<P>Subroutine ZSYM translates element number (<B>el</B>) into  symbol  text
+   (<B>sym</B>).
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>el</TH><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>sym</TH><TD>CHARACTER(LEN=2)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="IZEL">ENTRY IZEL (sym, el)</A></H4>
+<P>Entry IZEL translates symbol text (<B>sym</B>) into element number (<B>el</B>).
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>sym</TH><TD>CHARACTER(LEN=2)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>el</TH><TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="IZELW">ENTRY IZELW (sym, el, izlmsg)</A></H4>
+<P>Entry IZELW translates symbol text (<B>sym</B>) into element number (<B>el</B>)  and
+ returns a warning (<B>izlmsg</B>).
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>sym</TH><TD>CHARACTER(LEN=2)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>el</TH><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>izlmsg</TH><TD>CHARACTER(LEN=80)</TD>
+</TR>
+</TABLE>
+<P><B>Note:</B> As of version 1.5 of NSDFLIB, the  IUPAC  adopted  symbols  for
+   Z=104  through  109  have  been  implemented  in ZSYM and IZEL; the
+   adopted symbol for Z=110 was implemented in version  1.6c; and the adopted
+   symbol for Z=111 was adopted in version 1.6e.   IZEL  and
+ IZELW  will  still  properly interpret the old ENSDF formalism of &quot;04&quot;
+ through &quot;11&quot; for these  elements  but  IZELW  will  return  a  warning
+ message  in  <B>izlmsg</B>.   Version  1.5c  implemented  the  change  of the
+   chemical symbol for the neutron from &quot;N &quot; to &quot;NN&quot;.
+</P>
+<H4 ALIGN=CENTER><A NAME="CNVU2S">SUBROUTINE CNVU2S
+   (y, dy, sx, lenx, sdx, lendx)</A><BR>
+   <A NAME="DCNVUS">ENTRY DCNVUS (x, dx, sx, lenx, sdx, lendx)</A>
+</H4>
+<P>Subroutine  CNVU2S  converts  the  real  number <B>y</B>,   with   optional
+   uncertainty <B>dy</B>, into string format.
+</P>
+<P>Entry DCNVUS converts the double precision
+   number <B>x</B>,  with optional double precision uncertainty <B>dx</B>, into string
+   format.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>y</TH><TD>Input real number to be converted.</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>dy</TH><TD>Input real number uncertainty of y.</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>x</TH><TD>Input double precision number to be converted.</TD>
+<TD>REAL(KIND=8)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>dx</TH><TD>Input double precision uncertainty of x.</TD>
+<TD>REAL(KIND=8)</TD></TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>sx</TH><TD>Output string for x (and dx in <A HREF="#form2">format 2</A>, see below).</TD>
+<TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>lenx</TH><TD>Input length specifier for SX.</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>sdx</TH>
+<TD>Output string for dx (formats <A HREF="#form1">1</A> and <A HREF="#form3">3</A>).</TD>
+<TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>lendx</TH>
+<TD>Input length specifier for sdx (formats <A HREF="#form1">1</A> and
+   <A HREF="#form3">3</A>) or a format flag(formats <A HREF="#form2">2</A> and
+   <A HREF="#form4">4</A>).
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+<P>One of the four formats is selected based on the values of dy (or
+   dx) and lendx.
+<TABLE>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT><A NAME="form1">FORMAT 1:</TH>
+<TD>dy (or dx)&gt;0.0, lendx&gt;0.<BR>
+            sx and sdx are set.<BR>
+            sdx will be in the range of 1 to 25.<BR>
+            sx will be set as appropriate for the specified uncertainty.
+</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT><A NAME="form2">FORMAT 2:</TH>
+<TD>dy (or dx)&gt;0.0, lendx&lt;=0.<BR>
+            sx only is set.  sdx is not modified.<BR>
+            y (or x) and dy (or dx) are formatted into sx.<BR>
+            The uncertainty is not constrained to the range 1 to 25 if dx&gt;25.0.<BR>
+            If lendx=0, the results will be set to the &quot;natural&quot; number
+            of significant digits.<BR>
+            If lendx&lt;0, the results will be set to -lendx significant
+            digits.
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT><A NAME="form3">FORMAT 3:</TH>
+<TD>dy (or dx)=0.0, lendx&gt;=0.<BR>
+            sx and sdx are set.<BR>
+            sx will be set using 4 significant digits.<BR>
+            sdx will be blanked out to a length of lendx.
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT><A NAME="form4">FORMAT 4:</TH>
+<TD>dy (or dx)=0.0, lendx&lt;0.<BR>
+            sx only is set, sdx is not modified.<BR>
+            sx will be set using -lendx significant digits.<BR>
+</TR>
+</TABLE>
+</P>
+<P>If the resultant string is  too  long  to  fit  within  the  specified
+   lengths  or  a  correct string can not be derived, the returned string
+   will be filled with asterisks (&quot;*&quot;'s).
+</P>
+<P>
+CNVU2S (DCNVUS) calls subroutines <A HREF="#IVRFLW">IVRFLW</A>,
+ <A HREF="#KNVIX">KNVIX</A>, <A HREF="#SCALDX">SCALDX</A>, <A HREF="#SCALX">SCALX</A>,
+   <A HREF="#SCAL10">SCAL10</A>, and <A HREF="#KNVI2S">KNVI2S</A>.
+</P>
+<H4 ALIGN=CENTER><A NAME="SUPALF">SUBROUTINE SUPALF (str)</A></H4>
+<P>Subroutine SUPALF converts all non-numeric characters  in  <B>str</B>
+   to blanks (except &quot;.&quot;, &quot;E&quot;, &quot;+&quot;, and &quot;-&quot;).
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH>str</TH><TD>Input and output character string</TD>
+<TD>CHARACTER(LEN=*)</TD>
+</TR>
+</TABLE>
+</P>
+<H4 ALIGN=CENTER><A NAME="SUPEMB">SUBROUTINE SUPEMB (str)</A></H4>
+<P>Subroutine SUPEMB finds and eliminates  unwanted  embedded  &quot;+&quot;'s
+   and &quot;-&quot;'s so that &quot;+&quot;'s and &quot;-&quot;'s will appear only at the beginning of
+   the string or right after E.
+</P>
+<P>This subroutine should be used in addition to <A HREF="#SUPALF">SUPALF</A> when needed.
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH>str</TH><TD>Input and output character string</TD>
+<TD>CHARACTER(LEN=*)</TD>
+</TR>
+</TABLE>
+</P>
+<H4 ALIGN=CENTER><A NAME="IVRFLW">LOGICAL(KIND=4) FUNCTION IVRFLW (x, ipwr)</A></H4>
+<P>Logical Function IVRFLW checks to see if <B>x</B>&times;10<SUP>-<B>ipwr</B></SUP>
+   may be
+   converted  to  an integer without overflow errors.  The valid range is
+   between -2<SUP>31</SUP> and 2<SUP>31</SUP>-1. If the value falls within this
+   range,
+   .FALSE.   is  returned.   If  it  is  outside  this  range, .TRUE.  is
+   returned.
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>x</TH><TD>Input value</TD><TD>REAL(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>ipwr</TH><TD>Input power</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+</P>
+<H4 ALIGN=CENTER><A NAME="KNVIX">SUBROUTINE KNVIX (ix, ipwr, sx, lenx)</A></H4>
+<P>Subroutine KNVIX converts <B>ix</B> with scale factor <B>ipwr</B> to a
+ string <B>sx</B> of length <B>lenx</B>. If the string space is too small,
+ asterisks (&quot;*&quot;'s) are
+   returned in string <B>sx</B>.  If ipwr>0 or if
+ ix&times;10<SUP>ipwr</SUP><10<SUP>-4</SUP>, exponential format is used.
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>ix</TH><TD>Input value</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>ipwr</TH><TD>Input power</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>sx</TH><TD>Output character string</TD><TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>lenx</TH><TD>Length of string</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+</P>
+<H4 ALIGN=CENTER><A NAME="SCALDX">SUBROUTINE SCALDX (dx, idx, ipwr)</A></H4>
+<P>
+Subroutine SCALDX computes for the double precision value <B>dx</B>, the
+   integer <B>idx</B> in the range from 3 to 25 and the integer <B>ipwr</B>
+   which is the power of 10 to get back to the original. For example, if
+   dx=0.0025D+0, then idx=25 and ipwr=-4 will be returned and if
+   dx=35D+0, then idx=4 and ipwr=1 will be returned.
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>dx</TH><TD>Input value</TD><TD>REAL(KIND=8)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>idx</TH><TD>Integer value returned</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>ipwr</TH><TD>Exponent returned</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+</P>
+<H4 ALIGN=CENTER><A NAME="SCALX">SUBROUTINE SCALX (x, ix, ipwr)</A></H4>
+<P>
+Subroutine SCALX computes for the double precision value <B>x</B> and the
+   integer value <B>ipwr</B> the integer value <B>ix</B> which corresponds to
+   x&times;(10.0<SUP>-ipwr</SUP>). For example, if x=20.0D+0 and ipwr=-2, ix=0
+   will be returned and if x=-45.0D+0 and ipwr=-1, ix=-5 will be returned.
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>x</TH><TD>Input value</TD><TD>REAL(KIND=8)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>ix</TH><TD>Integer value returned</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>ipwr</TH><TD>Input exponent value</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+</P>
+<H4 ALIGN=CENTER><A NAME="SCAL10">SUBROUTINE SCAL10 (ix, idx, ipwr)</A></H4>
+<P>
+   Subroutine SCAL10 will, if both integer <B>ix</B> or <B>idx</B> are modulo
+   10 (exactly divisable by 10), reduce ix and idx by a factor of 10 and
+   increase the integer <B>ipwr</B> by 1. For example if ix=300, idx=30, and
+   ipwr=1, ix, then ix=30, idx=3, and ipwr=2 will be returned (both MOD(ix) and
+   MOD(idx) are equal to zero) and if ix=300, idx=35, and ipwr=1,
+   then the values are not changed (MOD(idx) is not equal to zero).
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>ix</TH><TD>Input/return value</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>idx</TH><TD></TD>Input/return value<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>ipwr</TH><TD>Input/return value</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+</P>
+<H4 ALIGN=CENTER><A NAME="KNVI2S">SUBROUTINE KNVI2S (n, str, slen)</A></H4>
+<P>
+Subroutine KNVI2S converts the integer <B>n</B> into a right justified
+   string, <B>str</B>, with string length <B>slen</B>. If slen is 0, the returned
+   string is left justified. If n is too large for slen characters, asterisks
+   (&quot;*&quot;'s) will fill str. The longest string considered is 11
+   characters according to the largest 4 byte character size.
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>n</TH><TD>Input value</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>str</TH><TD></TD>Character string returned<TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>slen</TH><TD>Length of character string</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+</P>
+<P>See also subroutine <A HREF="#NUMSTR">NUMSTR</A>.</P>
+<HR SIZE=2 NOSHADE>
+<H3 ALIGN=CENTER><A NAME="Math">Mathematical Routines Library</A></H3>
+<H4 ALIGN=CENTER><A NAME="UADD">SUBROUTINE UADD(z, dz, x, dx, y, dy)</A></H4>
+<P>
+UADD computes the sum of two numbers and the uncertainty of the sum.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>x</TH><TD>input variable</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>dx</TH><TD>uncertainty of x</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>y</TH><TD>input variable</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>dy</TH><TD>uncertainty of y</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>z</TH><TD>output variable,<BR>z=x+y</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>dz</TH><TD>uncertainty of z,<BR>dz=SQRT(dx*dx + dy*dy)</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="USUB">SUBROUTINE USUB(z, dz, x, dx, y, dy)</A></H4>
+<P>
+   USUB computes the difference of two numbers and the uncertainty of the
+   difference.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>x</TH><TD>input variable</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>dx</TH><TD>uncertainty of x</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>y</TH><TD>input variable</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>dy</TH><TD>uncertainty of y</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>z</TH><TD>output variable,<BR>z=x-y</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>dz</TH><TD>uncertainty of z,<BR>dz=SQRT(dx*dx + dy*dy)</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="UMULT">SUBROUTINE UMULT(z, dz, x, dx, y, dy)</A></H4>
+<P>
+UMULT computes the product of two numbers and the uncertainty  of  the
+   product.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>x</TH><TD>input variable</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>dx</TH><TD>uncertainty of x</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>y</TH><TD>input variable</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>dy</TH><TD>uncertainty of y</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>z</TH><TD>output variable,<BR>z=x&times;y</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>dz</TH>
+<TD>uncertainty of z,<BR>dz=z&times;SQRT((dx/x)<SUP>2</SUP>+(dy/y)<SUP>2</SUP>)</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="UDIV">SUBROUTINE UDIV (z, dz, x, dx, y, dy)</A></H4>
+<P>
+UDIV computes the result of the division of one number by another  and
+   the uncertainty in the result.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>x</TH><TD>input variable</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>dx</TH><TD>uncertainty of x</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>y</TH><TD>input variable</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>dy</TH><TD>uncertainty of y</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>z</TH><TD>output variable,<BR>z=x/y</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>dz</TH>
+<TD>uncertainty of z,<BR>dz=z&times;SQRT((dx/x)<SUP>2</SUP>+(dy/y)<SUP>2</SUP>)</TD>
+<TD>REAL(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="GAMA">COMPLEX(KIND=4) FUNCTION GAMA (x)</A></H4>
+<P>
+   Complex function GAMA returns value GAMMA(x) for all values of complex
+   variable <B>x</B>.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>x</TH><TD>Input variable</TD><TD>COMPLEX(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="GAMZ">COMPLEX(KIND=4) FUNCTION GAMZ (x)</A></H4>
+<P>
+Complex function GAMAZ returns value GAMMA(x) for
+ <B>x(real), x(imag) &gt;= 0</B>.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>x</TH><TD>Input variable<BR>x(real), x(imag) &gt;= 0</TD>
+<TD>COMPLEX(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="GAM1">COMPLEX(KIND=4) FUNCTION GAM1 (x)</A></H4>
+<P>
+Complex function GAM1 returns value GAMMA(x) for <B>x(real)&gt;=0,
+   0&lt;=x(imag)&lt;=1</B>.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>x</TH><TD>Input variable<BR>x(real)&gt;=0, 0&lt;x(imag)&lt;=1</TD>
+<TD>COMPLEX(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="GAM2">COMPLEX(KIND=4) FUNCTION GAM2 (x)</A></H4>
+<P>
+   Complex function GAM2 returns value GAMMA(x) for <B>0&lt;=x(real)&lt;=1,
+   0&lt;=x(imag)&lt;=1</B>, using Pade-Power approximation of 1/GAMMA(x).
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>x</TH><TD>Input variable<BR>0&lt;=x(real)&lt;=1,
+   0&lt;=x(imag)&lt;=1</TD>
+<TD>COMPLEX(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="HYPERG">COMPLEX(KIND=4) FUNCTION HYPERG(a, b, x)</A></H4>
+<P>
+Complex Function HYPERG returns HYPERGEOMETRIC(a, b, x).  Adopted from
+   1604 subroutine of C.W. Nestor.
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>a</TH><TD>Input variable<TD>COMPLEX(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>b</TH><TD>Input variable<TD>COMPLEX(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>x</TH><TD>Input variable<TD>COMPLEX(KIND=4)</TD>
+</TR>
+</TABLE>
+</P>
+<HR SIZE=2 NOSHADE>
+<H3 ALIGN=CENTER><A NAME="Time">Time &amp; Date Routines Library</A></H3>
+<P>The following subroutines use the intrinsic subroutine DATE_AND_TIME. This
+ subroutine requires the environmental TZ to be properly set. For OpenVMS,
+ this may be done by:<BR><BR>
+<FONT FACE="Courier">DEFINE TZ SYS$TIMEZONE_NAME</FONT>
+<BR>
+<BR>
+For other operating systems, please check your compiler's language reference
+ manual.
+</P>
+<H4 ALIGN=CENTER><A NAME="GET_TIME">SUBROUTINE GET_TIME (ipath, ieru)</A></H4>
+<P>
+Subroutine GET_TIME writes the begin run time or end run time depending on
+ <B>ipath</B> to standard outout and to the unit defined by <B>ieru</B>.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>ipath</TH>
+<TD>Output begin/end message<BR>
+    1 - Begin<BR>
+    2 - End (Default)
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>ieru</TH>
+<TD>Output unit number for message to be written to.<BR>
+    No message written if ieru=0
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="DATE_20">SUBROUTINE DATE_20 (date)</A></H4>
+<P>
+Subroutine DATE_20 returns the <B>date</B> as a character string of 11
+characters in the form of <I>dd-mmm-yyyy</I>.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>date</TH><TD>returned string</TD><TD>CHARACTER(LEN=*)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="IDATE_20">SUBROUTINE IDATE_20
+  (imonth, iday, iyear, idate)</A>
+</H4>
+<P>
+Subroutine IDATE_20 returns the date as components and in the form  of
+ <I>yyyymmdd</I>.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>idate</TH><TD>yyyymmdd</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>iday</TH><TD>Day of the month</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>imonth</TH><TD>Month of the year (January=1)</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>iyear</TH><TD>Year</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+<HR NOSHADE SIZE=2>
+<H3 ALIGN=CENTER><A NAME="Command">Command Line Routines Library</A></H3>
+<H4 ALIGN=CENTER><A NAME="GET_COMMAND_LINE">SUBROUTINE GET_COMMAND_LINE
+   (delim, carray, npar)</A></H4>
+<P>
+Subroutine GET_COMMAND_LINE checks for command line input and parses it.
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>delim</TH><TD>Command line delimiter</TD>
+<TD>CHARACTER(LEN=1)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>carray</TH><TD>Array of command line parameters</TD>
+<TD>CHARACTER(LEN=*), DIMENSION(*)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>npar</TH><TD>Dimension of carray</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+</P>
+<P>This subroutine is machine dependent and currently supports the following
+compilers:
+<TABLE>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>Linux/UNIX</TH>
+<TD>Lahey/Fujitsu FORTRAN 95 (UNX)<BR> Uses GETCL</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>Microsoft Windows</TH>
+<TD>HP/COMPAQ/Digital FORTRAN (DVF)<BR>Uses GETARG</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>OpenVMS</TH>
+<TD>Digital FORTRAN 90 (VMS)<BR>Uses LIB$GET_FOREIGN
+</TD>
+</TR>
+</TABLE>
+</P>
+<HR NOSHADE SIZE=2>
+<H3 ALIGN=CENTER><A NAME="File">File Manipulation Subprogram</A></H3>
+<H4 ALIGN=CENTER><A NAME="DELETE_FILE">SUBROUTINE DELETE_FILE (dfile)</A></H4>
+<P>
+Subroutine DELETE_FILE is a machine independent routine to delete a file.
+</P>
+<P>Example:
+<PRE>
+      CHARACTER(LEN=20) :: Dfile
+!
+      Dfile='TEST.TMP'
+      Call DELETE_FILE(Dfile) 
+</PRE>
+</P>
+<P>
+<B>Note: </B>This subroutine uses unit 69 to open and close the file to be
+deleted.
+</P>
+<HR SIZE=2 NOSHADE>
+<H3 ALIGN=CENTER><A NAME="Sorting">Sorting Routines Library</A></H3>
+<P>
+The subroutine SORT is a generalized sorting routine which is able to process
+ several different input file formats. Immediately prior to the call to SORT,
+ the subroutine <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A> (entry in SORT)
+ should be called. The remaining subroutines in this section are required by
+ SORT as are other NSDFLIB95 subprograms.
+</P>
+<H4 ALIGN=CENTER><A NAME="SORT">SUBROUTINE SORT (namin, namout, keys, ierr)</A></H4>
+<P>
+The subroutine SORT can be used to  perform  sorts  of  ASCII  or
+ binary  format  disk  files  from  a  FORTRAN program.  The subroutine
+ <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A> (Entry in SORT) must be called
+ first to provide the characteristics of the file to be sorted. If
+ SET_SORT_FILE is not called, the defaults are sequential formatted ASCII file
+ with a maximum record length of 0 bytes.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>namin</TH><TD>Input file path and name</TD><TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>namout</TH>
+<TD>Output file path and name<BR>
+    If this string is blank, then the sorted<BR>
+    output file will replace the input file.
+</TD>
+<TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>keys</TH>
+<TD>Sort keys<BR>
+    keys(1) - Number of sort fields specified (nkeys)</BR>
+    Repeat the following for each sort [offset=4*(n-1)]
+    <TABLE>
+    <TR VALIGN=TOP>
+    <TH ALIGN=LEFT>offset+1</TH>
+    <TD>Sort type<BR>
+        1 - Character</BR>
+        2 - Integer<BR>
+        3 - Floating point<BR>
+    </TD>
+    </TR>
+    <TR VALIGN=TOP>
+    <TH ALIGN=LEFT>offset+2</TH>
+    <TD>Sort order<BR>
+        0 - Ascending<BR>
+        1 - Descending<BR>
+    </TD>
+    </TR>
+    <TR VALIGN=TOP>
+    <TH ALIGN=LEFT>offset+3</TH>
+    <TD>Starting position of the field (byte number)
+    </TD>
+    </TR>
+    <TR VALIGN=TOP>
+    <TH ALIGN=LEFT>offset+4</TH>
+    <TD>Length of sort field in bytes</TD>
+    </TR>
+    </TABLE>
+    The total number of elements used is 4&times;nkeys+1.
+</TD>
+<TD>INTEGER(KIND=4), DIMENSION(*)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>ierr</TH>
+<TD>Error return<BR>
+    0&nbsp; &nbsp; &nbsp; &nbsp; - No error in executing the subroutine.<BR>
+    not 0 - Error encountered during execution of the subroutine.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="SET_SORT_FILE">ENTRY SET_SORT_FILE
+   (iaccf, iformf, mrecf)</A>
+</H4>
+<P>
+The entry SET_SORT_FILE informs the sort routines about the format of the file
+ to be sorted. If SET_SORT_FILE is not called, the defaults are sequential
+ formatted ASCII file with a maximum record length of 0 bytes.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iaccf</TH>
+<TD>Type of file access<BR>
+    1 - Sequential<BR>
+    2 - Direct (Random) - Default
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iformf</TH>
+<TD>Format of file<BR>
+    1 - Formatted<BR>
+    2 - Unformatted - Default
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>mrecf</TH>
+<TD>Record length<BR>
+    For a sequential file, this number is the maximum record length in bytes.<BR>
+    For a direct access file, this is the length of each record in bytes.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="FSORT"><NOBR>SUBROUTINE FSORT
+  <WBR>(namin, namout, iunit, iacc, iform, keys, mrec, mkey, mbuf, ierr)</NOBR></A>
+</H4>
+<P>
+The subroutine FSORT sorts the file specified by <B>namin</B>.
+</P>
+<P>
+This is an external sort.  The input file must be  closed  before
+ calling  SORT.   The  sorted data will be returned in the same file as
+ the input, but in sorted order, if <B>namout</B> is blank, then  namout  will
+ be set to namin.  The file(s) will be closed on exit.
+</P>
+<P>
+The algorithm used is Multiway Merging and Replacement  Selection
+ (see The Art of Computer Programming - Volume 3 / Sorting and
+ Searching by Donald E.  Knuth, Addison-Wesley Publishing Co., 1973).
+</P>
+<P>
+This implementation uses a tree of losers to organize the data in
+ a buffer array to minimize the time it takes to find the least element
+ of the buffer to send out to the temporary file.
+</P>
+<P>
+The merge phase uses a repeated two into two method to merge the
+ runs  down  to  two runs which are finally merged back into the user's
+ file.
+</P>
+<P>
+There are various parameters which may be varied at compile time
+ to either adjust the performance (<I>i.e.</I>, <B>mbuf</B>, the number of records
+ stored in main memory at any time (the number of leaves  in  the  sort
+ tree)) or tailor the routine for other applications.
+</P>
+<P>
+To simplify the implementation, it is required that the sort  key
+ be the first n characters of the record (n as appropriate for the
+ application) and  that  this  key  will  be  sorted  in  the  inherent
+ character set of the host machine as a simple string of n characters.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+<TD WIDTH=10>&nbsp;</TD>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>namin</TH>
+<TD>Input file path and name
+</TD>
+<TD>CHARACTER(LEN=*)</TD>
+<TD WIDTH=10>&nbsp;</TD>
+<TH ALIGN=LEFT>keys</TH>
+<TD>Sort keys<BR>
+    See keys under <A HREF="#SORT">SORT</A>.
+</TD>
+<TD>INTEGER(KIND=4), DIMENSION(*)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>namout</TH>
+<TD>Output file path and name<BR>
+    If this string is blank, then the sorted<BR>
+    output file will replace the input file.
+</TD>
+<TD>CHARACTER(LEN=*)</TD>
+<TD WIDTH=10>&nbsp;</TD>
+<TH ALIGN=LEFT>mrec</TH>
+<TD>Record length<BR>
+    Maximum of mrec as defined in <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A><BR>
+    or mkey in <A HREF="#SORT">SORT</A>.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iunit</TH>
+<TD>Input unit number<BR>
+    Defined as 70 in SORT.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+<TD WIDTH=10>&nbsp;</TD>
+<TH ALIGN=LEFT>mkey</TH>
+<TD>Length of sort keys
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iacc</TH>
+<TD>Type of file access<BR>
+    See iaccf under <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A>.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+<TD WIDTH=10>&nbsp;</TD>
+<TH ALIGN=LEFT>mbuf</TH>
+<TD>Incore buffer size<BR>
+    Defined in SORT as 2&times;MAX0(48,nrec/20) where nrec<BR>
+    is the number of records in the input file
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iform</TH>
+<TD>Format of file<BR>
+    See iformf under <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A>.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+<TD WIDTH=10>&nbsp;</TD>
+<TH ALIGN=LEFT>ierr</TH>
+<TD>Error return<BR>
+    0 - No error in executing the subroutine.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="READ_SORT_IN">READ_SORT_IN
+   (iunit, iacc, iform, nrio, inprec, eof)</A>
+</H4>
+<P>Subroutine READ_SORT_IN reads a record from the input file.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iunit</TH>
+<TD>Input unit number<BR>
+    Defined as 70 in SORT.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iacc</TH>
+<TD>Type of file access<BR>
+    See iaccf under <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A>.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iform</TH>
+<TD>Format of file<BR>
+    See iformf under <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A>.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>nrio</TH><TD>Record number</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>inprec</TH><TD>Record content</TD><TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>eof</TH><TD>End of file</TD><TD>LOGICAL(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="SORT_WRITE"><NOBR>SUBROUTINE SORT_WRITE
+       <WBR>(filout, iunit, iacc, iform, nrio, filin, merger, iend)</NOBR></A>
+</H4>
+<P>Subroutine SORT_WRITE writes a record to the sort file.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR>
+<TH ALIGN=LEFT>filout</TH><TD>Output unit number</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iunit</TH>
+<TD>Input unit number<BR>
+    Defined as 70 in SORT.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iacc</TH>
+<TD>Type of file access<BR>
+    See iaccf under <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A>.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iform</TH>
+<TD>Format of file<BR>
+    See iformf under <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A>.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>nrio</TH><TD>Record number</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>filin</TH><TD>Input unit number for merge</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>merger</TH><TD>Record to be written</TD><TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iend</TH>
+<TD>Flag for end of filin<BR>
+    0 - Not end of file<BR>
+    1 - End of file
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="SRTKEYS">SUBROUTINE SRTKEYS (keys, buffin, keystr)</A>
+</H4>
+<P>
+The subroutine SRTKEYS returned a keyed record based on the input buffer record
+ and the type of sort.
+</P>
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>keys</TH>
+<TD>Sort keys<BR>
+    See keys under <A HREF="#SORT">SORT</A>.
+</TD>
+<TD>INTEGER(KIND=4), DIMENSION(*)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>buffin</TH>
+<TD>Internal buffer record<BR>
+    Defined in FSORT
+</TD>
+<TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>keystr</TH>
+<TD>Internal buffer key record<BR>
+    Returned to calling subprogram
+</TD>
+<TD>CHARACTER(LEN=*)</TD>
+</TR>
+</TABLE>
+<H4 ALIGN=CENTER><A NAME="OPEN_SORT_INPUT">OPEN_SORT_INPUT
+   (namin, iunit, iacc, iform, mrec, nrec)</A>
+</H4>
+<P>
+Subroutine OPEN_SORT_INPUT opens the sort input file and  returns
+the number of records.
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>namin</TH>
+<TD>Input file path and name
+</TD>
+<TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iunit</TH>
+<TD>Input unit number<BR>
+    Defined as 70 in SORT.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iacc</TH>
+<TD>Type of file access<BR>
+    See iaccf under <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A>.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iform</TH>
+<TD>Format of file<BR>
+    See iformf under <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A>.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>mrec</TH>
+<TD>Record length<BR>
+    Maximum of mrec as defined in <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A><BR>
+    or mkey in SORT.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>nrec</TH><TD>Number of records in the input file</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+</TABLE>
+</P>
+<P>
+<B>Note: </B>This subroutine contains machine dependent coding if used under
+ OpenVMS to convert the record length for a direct access file from
+ bytes to words (one word equals four bytes).
+</P>
+<H4 ALIGN=CENTER><A NAME="OPEN_SORT_OUTPUT">SUBROUTINE OPEN_SORT_OUTPUT
+   (namout, iunit, iacc, iform, nrio, mrec)</A>
+</H4>
+<P>
+Subroutine OPEN_SORT_OUTPUT opens the sort output file.
+<TABLE>
+<TR>
+<TH>Name<HR COLOR="#000000" NOSHADE></TH>
+<TH>Description<HR COLOR="#000000" NOSHADE></TH>
+<TH>Type<HR COLOR="#000000" NOSHADE></TH>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>namout</TH>
+<TD>Output file path and name<BR>
+    If this string is blank, then the sorted<BR>
+    output file will replace the input file.
+</TD>
+<TD>CHARACTER(LEN=*)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iunit</TH>
+<TD>Input unit number<BR>
+    Defined as 70 in SORT.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iacc</TH>
+<TD>Type of file access<BR>
+    See iaccf under <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A>.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>iform</TH>
+<TD>Format of file<BR>
+    See iformf under <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A>.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR>
+<TH ALIGN=LEFT>nrio</TH><TD>Record number</TD><TD>INTEGER(KIND=4)</TD>
+</TR>
+<TR VALIGN=TOP>
+<TH ALIGN=LEFT>mrec</TH>
+<TD>Record length<BR>
+    Maximum of mrec as defined in <A HREF="#SET_SORT_FILE">SET_SORT_FILE</A><BR>
+    or mkey in SORT.
+</TD>
+<TD>INTEGER(KIND=4)</TD>
+</TR>
+</TR>
+</TABLE>
+</P>
+<P>
+<B>Note: </B>This subroutine contains machine dependent coding if used under
+ OpenVMS to convert the record length for a direct access file from
+ bytes to words (one word equals four bytes).
+</P>
+</BODY>
+</HTML>

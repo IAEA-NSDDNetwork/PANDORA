@@ -1,0 +1,477 @@
+
+185-TA-73        A=185 EL=TA Z=73 [Levels energy ordered. PANDORA version 7.0 as of 05-Apr-2004]                          185-TA-73 
+                 ----------------------------------------------------------------------------------
+       E(LEVEL)            SPIN                T1/2              L-VALUE   ID                             XREF
+       ---------------     ----                ----              -------   --                             ----
+ 
+                           (7/2+)              49 M 2                      185TA B- DECAY                  
+
+185-W-74         A=185 EL=W  Z=74 [Levels energy ordered. PANDORA version 7.0 as of 05-Apr-2004]                          185-W-74  
+                 ----------------------------------------------------------------------------------
+       E(LEVEL)            SPIN                T1/2              L-VALUE   ID                             XREF
+       ---------------     ----                ----              -------   --                             ----
+ 
+       0.0                 3/2-                75.1 D 3                    ADOPTED LEVELS, GAMMAS          
+       0.0                 3/2-                 75.1 D 3                   185TA B- DECAY                 A
+       0.0                 3/2-                75.1 D 3                    185W IT DECAY (1.67 M)         B
+       0.0                 3/2-                                            184W(N,G) E=THERMAL            C
+       0                   3/2-                                            184W(N,G) E=184,311,425 EV     E
+       0.0                 1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+       0.0                 3/2-                                            186W(D,T),184W(D,P)            F
+       0  S                                                                186W(3HE,A),(D,T)              G
+ 
+       23.4  3             (1/2)-                                          184W(N,G) E=THERMAL            C
+       23.56  4            (1/2)-                                          ADOPTED LEVELS, GAMMAS          
+       23.56  4            (1/2)-                                          185W IT DECAY (1.67 M)         B
+       23.6  2             (1/2)-                                          185TA B- DECAY                 A
+       23.8 4              1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+       24                  1/2-                                            186W(D,T),184W(D,P)            F
+ 
+       63.8 4              5/2                                             184W(N,G) E=2,24 KEV RES: AV   D
+ 
+       65.5  4             5/2-                                            184W(N,G) E=THERMAL            C
+       65.88  4            5/2-                                            ADOPTED LEVELS, GAMMAS          
+       65.88  4            5/2-                                            185W IT DECAY (1.67 M)         B
+       66                                                                  184W(POL D,P)                  I
+       66                  5/2-                                  3         186W(D,T),184W(D,P)            F
+       66.1 1              5/2-                                            185TA B- DECAY                 A
+ 
+       93                  (3/2)-                                          184W(N,G) E=184,311,425 EV     E
+       93.30  5            (3/2)-                                          185TA B- DECAY                 A
+       93.31  6            (3/2)-                                          ADOPTED LEVELS, GAMMAS          
+       93.31  6            (3/2)-                                          185W IT DECAY (1.67 M)         B
+       93.4 3              1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+       93.5  3             (3/2)-                                          184W(N,G) E=THERMAL            C
+       94                                                                  184W(POL D,P)                  I
+       94                  3/2-                                  1         186W(D,T),184W(D,P)            F
+ 
+       173.7  4            7/2-                                            184W(N,G) E=THERMAL            C
+       173.74  5           7/2-                1.5 NS LT                   ADOPTED LEVELS, GAMMAS          
+       173.74  5           7/2-                                            185W IT DECAY (1.67 M)         B
+       173.91  5           7/2-                1.5 NS LT                   185TA B- DECAY                 A
+       174                 7/2-                                            186W(D,T),184W(D,P)            F
+ 
+       187.90  3           (5/2-)                                          ADOPTED LEVELS, GAMMAS          
+       187.90  3           (5/2-)                                          185W IT DECAY (1.67 M)         B
+       187.9  3            (5/2-)                                          184W(N,G) E=THERMAL            C
+       188                 5/2-                                  3         186W(D,T),184W(D,P)            F
+       188.3 2             (5/2-)                                          185TA B- DECAY                 A
+ 
+       197.43  5           11/2+               1.67 M 3                    ADOPTED LEVELS, GAMMAS          
+                           11/2+               1.67 M 3                    185W IT DECAY (1.67 M)          
+ 
+       197.43  5           11/2+               1.67 M 3                    185W IT DECAY (1.67 M)         B
+ 
+       242.5  3            (7/2)-                                          184W(N,G) E=THERMAL            C
+       243.7  1            (7/2)-              19.3 NS 5                   ADOPTED LEVELS, GAMMAS          
+
+185-W-74         A=185 EL=W  Z=74 [Levels energy ordered. PANDORA version 7.0 as of 05-Apr-2004]                          185-W-74  
+                 ----------------------------------------------------------------------------------
+       E(LEVEL)            SPIN                T1/2              L-VALUE   ID                             XREF
+             ---------------                ----              ----   -------                             --
+       ----
+       243.7  1            (7/2)-              19.3 NS 5                   185TA B- DECAY                 A
+       244                                                                 184W(POL D,P)                  I
+       244                 7/2-                                  3         186W(D,T),184W(D,P)            F
+ 
+       302  6              (9/2-)                                          ADOPTED LEVELS, GAMMAS          
+       302                 9/2-                                  GE5       186W(D,T),184W(D,P)            F
+ 
+       334  6              (7/2-)                                          ADOPTED LEVELS, GAMMAS          
+       334                                                                 184W(POL D,P)                  I
+       334                 7/2-                                  3         186W(D,T),184W(D,P)            F
+ 
+       384  6              (13/2+)                                         ADOPTED LEVELS, GAMMAS          
+       384                                                                 184W(POL D,P)                  I
+       384                 13/2+                                           186W(D,T),184W(D,P)            F
+       384                 13/2+                                 6         186W(3HE,A),(D,T)              G
+ 
+       390.3 10            (9/2-)                                          184W(N,G) E=THERMAL            C
+       391.0  2            (9/2-)                                          ADOPTED LEVELS, GAMMAS          
+       391.0 2             (9/2-)                                          185TA B- DECAY                 A
+       391                 9/2-                                            186W(D,T),184W(D,P)            F
+ 
+       478 AP              (11/2-)                                         ADOPTED LEVELS, GAMMAS          
+       478 AP              (11/2-)                                         186W(D,T),184W(D,P)            F
+ 
+       492 AP              (9/2-)                                          ADOPTED LEVELS, GAMMAS          
+       492 AP              (9/2-)                                          186W(D,T),184W(D,P)            F
+ 
+       570 AP              (11/2-)                                         ADOPTED LEVELS, GAMMAS          
+       570 AP              (11/2-)                               GE5       186W(D,T),184W(D,P)            F
+ 
+       663                 3/2-                                            184W(N,G) E=184,311,425 EV     E
+       663.1 4             1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+       663.6  3            3/2-                                            ADOPTED LEVELS, GAMMAS          
+       663.6  3            3/2-                                            184W(N,G) E=THERMAL            C
+ 
+       666                 (3/2-,5/2+)                                     184W(POL D,P)                  I
+       666                                                       1         186W(D,T),184W(D,P)            F
+ 
+       706  6              (11/2-)                                         ADOPTED LEVELS, GAMMAS          
+       706                 (11/2-)                               GE5,3     186W(D,T),184W(D,P)            F
+ 
+       716  6              (9/2+)                                          ADOPTED LEVELS, GAMMAS          
+       716                 (9/2+)                                3,GE5     186W(D,T),184W(D,P)            F
+       716                 (9/2+)                                          186W(3HE,A),(D,T)              G
+ 
+       729.8 5             1/2,3/2                                         184W(N,G) E=2,24 KEV RES: AV   D
+       730.0  5            1/2(-),3/2(-)                                   ADOPTED LEVELS, GAMMAS          
+       730.0  5            (1/2-,3/2-)                                     184W(N,G) E=THERMAL            C
+ 
+       733                                                                 184W(POL D,P)                  I
+       733                                                       1,(3)     186W(D,T),184W(D,P)            F
+ 
+       767                 1/2-,3/2-                                       184W(N,G) E=184,311,425 EV     E
+
+185-W-74         A=185 EL=W  Z=74 [Levels energy ordered. PANDORA version 7.0 as of 05-Apr-2004]                          185-W-74  
+                 ----------------------------------------------------------------------------------
+       E(LEVEL)            SPIN                T1/2              L-VALUE   ID                             XREF
+             ---------------                ----              ----   -------                             --
+       ----
+       768.1 3             1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+       768.39 25           1/2-,3/2-                                       ADOPTED LEVELS, GAMMAS          
+       768.39 25           1/2-,3/2-                                       184W(N,G) E=THERMAL            C
+ 
+       774  1              1/2,3/2,5/2+                                    ADOPTED LEVELS, GAMMAS          
+       774  1              1/2,3/2,5/2                                     184W(N,G) E=THERMAL            C
+ 
+       785.4  4            (9/2-)                                          ADOPTED LEVELS, GAMMAS          
+       785.4  4            (9/2-)                                          185TA B- DECAY                 A
+ 
+       789                                                                 184W(POL D,P)                  I
+       789 AP              (9/2-)                                GE5,3     186W(D,T),184W(D,P)            F
+ 
+       801 AP                                                              ADOPTED LEVELS, GAMMAS          
+       801                                                                 184W(POL D,P)                  I
+       801 AP                                                              186W(D,T),184W(D,P)            F
+ 
+       822.77 24           1/2-,3/2-                                       ADOPTED LEVELS, GAMMAS          
+       822.77 24           1/2-,3/2-                                       184W(N,G) E=THERMAL            C
+       823.3 6             1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+       825                 1/2-,3/2-                                       184W(N,G) E=184,311,425 EV     E
+ 
+       827.5  5            1/2-,3/2-                                       ADOPTED LEVELS, GAMMAS          
+       827.5 5             1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+ 
+       833                                                       (1)       186W(D,T),184W(D,P)            F
+ 
+       842.0  9            5/2                                             ADOPTED LEVELS, GAMMAS          
+       842.0 9             5/2                                             184W(N,G) E=2,24 KEV RES: AV   D
+ 
+       888                 5/2-                                  3         186W(D,T),184W(D,P)            F
+       888.6  5            (5/2-)                                          ADOPTED LEVELS, GAMMAS          
+ 
+       888.6 5             5/2                                             184W(N,G) E=2,24 KEV RES: AV   D
+ 
+       904 6                                                               ADOPTED LEVELS, GAMMAS          
+       904                                                                 186W(D,T),184W(D,P)            F
+ 
+       917.6  7            1/2,3/2                                         ADOPTED LEVELS, GAMMAS          
+       917.6 7             1/2,3/2                                         184W(N,G) E=2,24 KEV RES: AV   D
+ 
+       921  6                                                              ADOPTED LEVELS, GAMMAS          
+       921                                                       3         186W(D,T),184W(D,P)            F
+ 
+       971                                                                 184W(N,G) E=184,311,425 EV     E
+ 
+       986  6              (7/2-)                                          ADOPTED LEVELS, GAMMAS          
+       986                                                                 184W(POL D,P)                  I
+       986                 7/2-                                  3         186W(D,T),184W(D,P)            F
+ 
+       1005                (1/2)-                                          184W(N,G) E=184,311,425 EV     E
+       1005.7 4            1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+       1006.8  4           (1/2)-                                          ADOPTED LEVELS, GAMMAS          
+
+185-W-74         A=185 EL=W  Z=74 [Levels energy ordered. PANDORA version 7.0 as of 05-Apr-2004]                          185-W-74  
+                 ----------------------------------------------------------------------------------
+       E(LEVEL)            SPIN                T1/2              L-VALUE   ID                             XREF
+             ---------------                ----              ----   -------                             --
+       ----
+       1006.8  4           (1/2)-                                          184W(N,G) E=THERMAL            C
+       1008                1/2-                                            186W(D,T),184W(D,P)            F
+ 
+       1013  6             (1/2-)                                          ADOPTED LEVELS, GAMMAS          
+       1013                (1/2-)                                          186W(D,T),184W(D,P)            F
+ 
+       1020  6             (13/2+)                                         ADOPTED LEVELS, GAMMAS          
+       1020                13/2+                                           186W(D,T),184W(D,P)            F
+       1020                13/2+                                 6         186W(3HE,A),(D,T)              G
+ 
+       1036.0  4           (3/2)-                                          ADOPTED LEVELS, GAMMAS          
+       1036.0 4            1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+ 
+       1040                (3/2-)                                1         186W(D,T),184W(D,P)            F
+ 
+       1058                7/2-                                  3         186W(D,T),184W(D,P)            F
+       1059  2             (7/2-)                                          ADOPTED LEVELS, GAMMAS          
+       1059 2              (7/2-)                                          185TA B- DECAY                 A
+       1061                                                                184W(POL D,P)                  I
+ 
+       1062.5  4           (5/2+)                                          ADOPTED LEVELS, GAMMAS          
+       1062.5  4           (5/2+)                                          184W(N,G) E=THERMAL            C
+ 
+       1068.1  4           1/2-,3/2-                                       ADOPTED LEVELS, GAMMAS          
+       1068.1 4            1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+ 
+       1073  6             (5/2-)                                          ADOPTED LEVELS, GAMMAS          
+       1073                (5/2-)                                3,1       186W(D,T),184W(D,P)            F
+ 
+       1101.7  4           1/2-,3/2-                                       ADOPTED LEVELS, GAMMAS          
+       1101.7 4            1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+       1102                1/2-,3/2-                                       184W(N,G) E=184,311,425 EV     E
+ 
+       1106  6             (3/2-)                                          ADOPTED LEVELS, GAMMAS          
+       1106                (3/2-)                                1,3       186W(D,T),184W(D,P)            F
+ 
+       1107  6                                                             ADOPTED LEVELS, GAMMAS          
+       1107                                                      1,3       186W(D,T),184W(D,P)            F
+ 
+       1118  6             (5/2-)                                          ADOPTED LEVELS, GAMMAS          
+ 
+       1118 AP             (9/2-)                                          ADOPTED LEVELS, GAMMAS          
+       1118                                                                184W(POL D,P)                  I
+       1118 AP             (5/2-)AND(9/2-)                       3         186W(D,T),184W(D,P)            F
+ 
+       1120  6                                                             ADOPTED LEVELS, GAMMAS          
+       1120                                                      3,1       186W(D,T),184W(D,P)            F
+ 
+       1145.5  4           1/2-,3/2-                                       ADOPTED LEVELS, GAMMAS          
+       1145.5 4            1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+       1147                1/2-,3/2-                                       184W(N,G) E=184,311,425 EV     E
+       1149                                                                184W(POL D,P)                  I
+       1149                                                      1         186W(D,T),184W(D,P)            F
+
+185-W-74         A=185 EL=W  Z=74 [Levels energy ordered. PANDORA version 7.0 as of 05-Apr-2004]                          185-W-74  
+                 ----------------------------------------------------------------------------------
+       E(LEVEL)            SPIN                T1/2              L-VALUE   ID                             XREF
+             ---------------                ----              ----   -------                             --
+       ----
+ 
+       1154  6             (7/2-)                                          ADOPTED LEVELS, GAMMAS          
+       1154                (7/2-)                                3,1       186W(D,T),184W(D,P)            F
+ 
+       1181.54 24          1/2-                                            ADOPTED LEVELS, GAMMAS          
+       1181.54 24          1/2-                                            184W(N,G) E=THERMAL            C
+       1181.7 4            1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+ 
+       1184                1/2-,(1/2+,3/2+)                                184W(POL D,P)                  I
+       1185                                                      1         186W(D,T),184W(D,P)            F
+ 
+       1218.9 4            1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+       1219 AP             (9/2-)                                          ADOPTED LEVELS, GAMMAS          
+ 
+       1219                3/2-                                            184W(N,G) E=184,311,425 EV     E
+ 
+       1219 AP             (9/2-)                                (GE5)     186W(D,T),184W(D,P)            F
+ 
+       1219.1  3           3/2-                                            ADOPTED LEVELS, GAMMAS          
+       1219.1  3           3/2-                                            184W(N,G) E=THERMAL            C
+       1222                3/2-                                            184W(POL D,P)                  I
+       1222                                                      1         186W(D,T),184W(D,P)            F
+ 
+       1246  1                                                             ADOPTED LEVELS, GAMMAS          
+       1246  1                                                             184W(N,G) E=THERMAL            C
+ 
+       1279 AP                                                             ADOPTED LEVELS, GAMMAS          
+       1279 AP                                                   (3)       186W(D,T),184W(D,P)            F
+ 
+       1285.5  7           3/2-                                            ADOPTED LEVELS, GAMMAS          
+       1285.5  7           3/2-                                            184W(N,G) E=THERMAL            C
+       1286.9 4            1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+ 
+       1290                (3/2-,5/2+)                                     184W(POL D,P)                  I
+       1290                                                      1         186W(D,T),184W(D,P)            F
+ 
+       1317  6                                                             ADOPTED LEVELS, GAMMAS          
+       1317                                                                184W(POL D,P)                  I
+       1317                                                                186W(D,T),184W(D,P)            F
+ 
+       1317                                                      3         186W(D,T),184W(D,P)            F
+ 
+       1335  6             (7/2-)                                          ADOPTED LEVELS, GAMMAS          
+       1335                (7/2-)                                          186W(D,T),184W(D,P)            F
+ 
+       1343  6                                                             ADOPTED LEVELS, GAMMAS          
+       1343                                                      3         186W(D,T),184W(D,P)            F
+ 
+       1346  6                                                             ADOPTED LEVELS, GAMMAS          
+       1346                                                                186W(D,T),184W(D,P)            F
+ 
+       1359.2 10                                                           ADOPTED LEVELS, GAMMAS          
+       1359.2 10                                                           184W(N,G) E=THERMAL            C
+
+185-W-74         A=185 EL=W  Z=74 [Levels energy ordered. PANDORA version 7.0 as of 05-Apr-2004]                          185-W-74  
+                 ----------------------------------------------------------------------------------
+       E(LEVEL)            SPIN                T1/2              L-VALUE   ID                             XREF
+             ---------------                ----              ----   -------                             --
+       ----
+ 
+       1361  6             (9/2-)                                          ADOPTED LEVELS, GAMMAS          
+       1361                (9/2-)                                          186W(D,T),184W(D,P)            F
+ 
+       1365.6  6           1/2-,3/2-                                       ADOPTED LEVELS, GAMMAS          
+       1365.7 6            1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+ 
+       1382  6                                                             ADOPTED LEVELS, GAMMAS          
+       1382                                                      1,3       186W(D,T),184W(D,P)            F
+ 
+       1402 AP                                                             ADOPTED LEVELS, GAMMAS          
+       1402 AP                                                   GE5,3     186W(D,T),184W(D,P)            F
+ 
+       1410 AP                                                             ADOPTED LEVELS, GAMMAS          
+       1410 AP                                                             186W(D,T),184W(D,P)            F
+ 
+       1424.5  5           5/2                                             ADOPTED LEVELS, GAMMAS          
+       1424.5 5            5/2                                             184W(N,G) E=2,24 KEV RES: AV   D
+ 
+       1428  6                                                             ADOPTED LEVELS, GAMMAS          
+       1428                                                      1         186W(D,T),184W(D,P)            F
+ 
+       1441.2  9           1/2-,3/2-                                       ADOPTED LEVELS, GAMMAS          
+       1441.2  9           1/2-,3/2-                                       184W(N,G) E=THERMAL            C
+       1441.8 4            1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+ 
+       1445  6                                                             ADOPTED LEVELS, GAMMAS          
+       1445                                                      (3)       186W(D,T),184W(D,P)            F
+ 
+       1448  6                                                             ADOPTED LEVELS, GAMMAS          
+       1448                                                      3,1       186W(D,T),184W(D,P)            F
+ 
+       1496.3  4           1/2-,3/2-                                       ADOPTED LEVELS, GAMMAS          
+       1496.3 4            1/2-,3/2-                                       184W(N,G) E=2,24 KEV RES: AV   D
+ 
+       1499                1/2-,3/2-                                       184W(N,G) E=184,311,425 EV     E
+       1501                                                      1,3       186W(D,T),184W(D,P)            F
+ 
+       1503                                                      3,1       186W(D,T),184W(D,P)            F
+       1503.5  5                                                           ADOPTED LEVELS, GAMMAS          
+       1503.5  5                                                           184W(N,G) E=THERMAL            C
+ 
+       1535.4  9                                                           ADOPTED LEVELS, GAMMAS          
+       1535.4  9                                                           184W(N,G) E=THERMAL            C
+       1537                                                                184W(N,G) E=184,311,425 EV     E
+ 
+       1542                                                      1         186W(D,T),184W(D,P)            F
+ 
+       1561  6             (13/2+)                                         ADOPTED LEVELS, GAMMAS          
+ 
+       1561  6                                                             ADOPTED LEVELS, GAMMAS          
+       1561                13/2+                                           186W(D,T),184W(D,P)            F
+ 
+       1561                                                      (3)       186W(D,T),184W(D,P)            F
+
+185-W-74         A=185 EL=W  Z=74 [Levels energy ordered. PANDORA version 7.0 as of 05-Apr-2004]                          185-W-74  
+                 ----------------------------------------------------------------------------------
+       E(LEVEL)            SPIN                T1/2              L-VALUE   ID                             XREF
+             ---------------                ----              ----   -------                             --
+       ----
+       1561                13/2+                                 6         186W(3HE,A),(D,T)              G
+ 
+       1572.3 10                                                           ADOPTED LEVELS, GAMMAS          
+       1572.3 10                                                           184W(N,G) E=THERMAL            C
+ 
+       1603  6                                                             ADOPTED LEVELS, GAMMAS          
+       1603                                                                186W(D,T),184W(D,P)            F
+ 
+       1623  6                                                             ADOPTED LEVELS, GAMMAS          
+       1623                                                      3,GE5     186W(D,T),184W(D,P)            F
+ 
+       1627 10                                                             ADOPTED LEVELS, GAMMAS          
+       1627                                                                186W(D,T),184W(D,P)            F
+ 
+       1646 10                                                             ADOPTED LEVELS, GAMMAS          
+       1646                                                                186W(D,T),184W(D,P)            F
+ 
+       1657  1                                                             ADOPTED LEVELS, GAMMAS          
+       1657  1                                                             184W(N,G) E=THERMAL            C
+ 
+       1663  6                                                             ADOPTED LEVELS, GAMMAS          
+       1663                                                      1,3       186W(D,T),184W(D,P)            F
+ 
+       1666  6             (9/2+)                                          ADOPTED LEVELS, GAMMAS          
+       1666                (9/2+)                                1,3       186W(D,T),184W(D,P)            F
+       1666                (9/2+)                                          186W(3HE,A),(D,T)              G
+ 
+       1677  6                                                             ADOPTED LEVELS, GAMMAS          
+       1677                                                      3         186W(D,T),184W(D,P)            F
+ 
+       1683 AP                                                             ADOPTED LEVELS, GAMMAS          
+       1683 AP                                                             186W(D,T),184W(D,P)            F
+ 
+       1699  6                                                             ADOPTED LEVELS, GAMMAS          
+       1699                                                                186W(D,T),184W(D,P)            F
+ 
+       1701 10                                                             ADOPTED LEVELS, GAMMAS          
+       1701                                                      3         186W(D,T),184W(D,P)            F
+ 
+       1722  6                                                             ADOPTED LEVELS, GAMMAS          
+       1722                                                      1         186W(D,T),184W(D,P)            F
+ 
+       1728 10                                                             ADOPTED LEVELS, GAMMAS          
+       1728                                                      1,3       186W(D,T),184W(D,P)            F
+ 
+       1745  6                                                             ADOPTED LEVELS, GAMMAS          
+       1745                                                      1         186W(D,T),184W(D,P)            F
+ 
+       1800  6                                                             ADOPTED LEVELS, GAMMAS          
+       1800                                                      1         186W(D,T),184W(D,P)            F
+ 
+       1830 AP                                                             ADOPTED LEVELS, GAMMAS          
+       1830 AP                                                   1         186W(D,T),184W(D,P)            F
+
+185-W-74         A=185 EL=W  Z=74 [Levels energy ordered. PANDORA version 7.0 as of 05-Apr-2004]                          185-W-74  
+                 ----------------------------------------------------------------------------------
+       E(LEVEL)            SPIN                T1/2              L-VALUE   ID                             XREF
+             ---------------                ----              ----   -------                             --
+       ----
+ 
+       1841                                                                184W(N,G) E=184,311,425 EV     E
+       1845 10                                                             ADOPTED LEVELS, GAMMAS          
+       1845                                                                186W(D,T),184W(D,P)            F
+ 
+       1846 10             (13/2+)                                         ADOPTED LEVELS, GAMMAS          
+       1846                13/2+                                           186W(D,T),184W(D,P)            F
+       1846                13/2+                                 6         186W(3HE,A),(D,T)              G
+ 
+       1860 10                                                             ADOPTED LEVELS, GAMMAS          
+       1860                                                                186W(D,T),184W(D,P)            F
+ 
+       1874 10                                                             ADOPTED LEVELS, GAMMAS          
+       1874                                                                186W(D,T),184W(D,P)            F
+ 
+       1880.8 12                                                           ADOPTED LEVELS, GAMMAS          
+       1881.2 10                                                           184W(N,G) E=THERMAL            C
+ 
+       1886 10                                                             ADOPTED LEVELS, GAMMAS          
+       1886                                                      1         186W(D,T),184W(D,P)            F
+ 
+       1901 10                                                             ADOPTED LEVELS, GAMMAS          
+       1904                                                                186W(D,T),184W(D,P)            F
+ 
+       1915 10                                                             ADOPTED LEVELS, GAMMAS          
+       1915                                                                186W(D,T),184W(D,P)            F
+ 
+       1937 10                                                             ADOPTED LEVELS, GAMMAS          
+       1937                                                      3         186W(D,T),184W(D,P)            F
+ 
+       1952 10                                                             ADOPTED LEVELS, GAMMAS          
+       1952                                                      3,1       186W(D,T),184W(D,P)            F
+ 
+       1959 10                                                             ADOPTED LEVELS, GAMMAS          
+       1959                                                                186W(D,T),184W(D,P)            F
+ 
+       1986 10                                                             ADOPTED LEVELS, GAMMAS          
+       1986                                                      1         186W(D,T),184W(D,P)            F
+ 
+       2031 10                                                             ADOPTED LEVELS, GAMMAS          
+       2031                                                      1         186W(D,T),184W(D,P)            F
+ 
+       2038 AP                                                             ADOPTED LEVELS, GAMMAS          
+       2038 AP                                                             186W(D,T),184W(D,P)            F
+ 
+       5754.6  3           1/2+                                            184W(N,G) E=THERMAL            C
+       5755                                                                184W(N,G) E=184,311,425 EV     E
+       SN+2                                                                184W(N,G) E=2,24 KEV RES: AV   D
+ 
+       SN+24                                                               184W(N,G) E=2,24 KEV RES: AV   D

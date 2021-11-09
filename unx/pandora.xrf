@@ -1,0 +1,254 @@
+ 
+ 185W   XA185TA B- DECAY                
+ 185W   XB185W IT DECAY (1.67 M)        
+ 185W   XC184W(N,G) E=THERMAL           
+ 185W   XE184W(N,G) E=184,311,425 EV    
+ 185W   XD184W(N,G) E=2,24 KEV RES: AV  
+ 185W   XI184W(POL D,P)                 
+ 185W   XH186W(P,D) E=18.0 MEV          
+ 185W   XF186W(D,T),184W(D,P)           
+ 185W   XG186W(3HE,A),(D,T)             
+ 185TA  L             (7/2+)            49 M 2          
+A185W   L 0.0         3/2-              75.1 D 3        
+A185W X L XREF=ABCDEFG
+A185W   L 23.56       (1/2)-                            
+A185W X L XREF=ABCDF
+ 185W   L 63.8        5/2                               
+ 185W X L XREF=D
+A185W   L 65.88       5/2-                              
+A185W X L XREF=ABCFI
+A185W   L 93.31       (3/2)-                            
+A185W X L XREF=ABCDEFI
+A185W   L 173.74      7/2-              1.5 NS LT       
+A185W X L XREF=ABCF
+A185W   L 187.90      (5/2-)                            
+A185W X L XREF=ABCF
+A185W   L 197.43      11/2+             1.67 M 3        
+ 185W   L 197.43      11/2+             1.67 M 3        
+ 185W X L XREF=B
+A185W   L 243.7       (7/2)-            19.3 NS 5       
+A185W X L XREF=ACFI
+A185W   L 302         (9/2-)                            
+A185W X L XREF=F
+A185W   L 334         (7/2-)                            
+A185W X L XREF=FI
+A185W   L 384         (13/2+)                           
+A185W X L XREF=FGI
+A185W   L 391.0       (9/2-)                            
+A185W X L XREF=ACF
+A185W   L 478         (11/2-)                           
+A185W X L XREF=F
+A185W   L 492         (9/2-)                            
+A185W X L XREF=F
+A185W   L 570         (11/2-)                           
+A185W X L XREF=F
+A185W   L 663.6       3/2-                              
+A185W X L XREF=CDE
+ 185W   L 666                                           
+ 185W X L XREF=FI
+A185W   L 706         (11/2-)                           
+A185W X L XREF=F
+A185W   L 716         (9/2+)                            
+A185W X L XREF=FG
+A185W   L 730.0       1/2(-),3/2(-)                     
+A185W X L XREF=CD
+ 185W   L 733                                           
+ 185W X L XREF=FI
+A185W   L 768.39      1/2-,3/2-                         
+A185W X L XREF=CDE
+A185W   L 774         1/2,3/2,5/2+                      
+A185W X L XREF=C
+A185W   L 785.4       (9/2-)                            
+A185W X L XREF=A
+ 185W   L 789         (9/2-)                            
+ 185W X L XREF=FI
+A185W   L 801                                           
+A185W X L XREF=FI
+A185W   L 822.77      1/2-,3/2-                         
+A185W X L XREF=CDE
+A185W   L 827.5       1/2-,3/2-                         
+A185W X L XREF=D
+ 185W   L 833                                           
+ 185W X L XREF=F
+A185W   L 842.0       5/2                               
+A185W X L XREF=D
+A185W   L 888.6       (5/2-)                            
+A185W X L XREF=F
+ 185W   L 888.6       5/2                               
+ 185W X L XREF=D
+A185W   L 904                                           
+A185W X L XREF=F
+A185W   L 917.6       1/2,3/2                           
+A185W X L XREF=D
+A185W   L 921                                           
+A185W X L XREF=F
+ 185W   L 971                                           
+ 185W X L XREF=E
+A185W   L 986         (7/2-)                            
+A185W X L XREF=FI
+A185W   L 1006.8      (1/2)-                            
+A185W X L XREF=CDEF
+A185W   L 1013        (1/2-)                            
+A185W X L XREF=F
+A185W   L 1020        (13/2+)                           
+A185W X L XREF=FG
+A185W   L 1036.0      (3/2)-                            
+A185W X L XREF=D
+ 185W   L 1040        (3/2-)                            
+ 185W X L XREF=F
+A185W   L 1059        (7/2-)                            
+A185W X L XREF=AFI
+A185W   L 1062.5      (5/2+)                            
+A185W X L XREF=C
+A185W   L 1068.1      1/2-,3/2-                         
+A185W X L XREF=D
+A185W   L 1073        (5/2-)                            
+A185W X L XREF=F
+A185W   L 1101.7      1/2-,3/2-                         
+A185W X L XREF=DE
+A185W   L 1106        (3/2-)                            
+A185W X L XREF=F
+A185W   L 1107                                          
+A185W X L XREF=F
+A185W   L 1118        (5/2-)                            
+A185W   L 1118        (9/2-)                            
+A185W X L XREF=FI
+A185W   L 1120                                          
+A185W X L XREF=F
+A185W   L 1145.5      1/2-,3/2-                         
+A185W X L XREF=DEFI
+A185W   L 1154        (7/2-)                            
+A185W X L XREF=F
+A185W   L 1181.54     1/2-                              
+A185W X L XREF=CD
+ 185W   L 1185                                          
+ 185W X L XREF=FI
+A185W   L 1219        (9/2-)                            
+A185W X L XREF=D
+ 185W   L 1219        3/2-                              
+ 185W X L XREF=E
+ 185W   L 1219        (9/2-)                            
+ 185W X L XREF=F
+A185W   L 1219.1      3/2-                              
+A185W X L XREF=CFI
+A185W   L 1246                                          
+A185W X L XREF=C
+A185W   L 1279                                          
+A185W X L XREF=F
+A185W   L 1285.5      3/2-                              
+A185W X L XREF=CD
+ 185W   L 1290                                          
+ 185W X L XREF=FI
+A185W   L 1317                                          
+A185W X L XREF=FI
+ 185W   L 1317                                          
+ 185W X L XREF=F
+A185W   L 1335        (7/2-)                            
+A185W X L XREF=F
+A185W   L 1343                                          
+A185W X L XREF=F
+A185W   L 1346                                          
+A185W X L XREF=F
+A185W   L 1359.2                                        
+A185W X L XREF=C
+A185W   L 1361        (9/2-)                            
+A185W X L XREF=F
+A185W   L 1365.6      1/2-,3/2-                         
+A185W X L XREF=D
+A185W   L 1382                                          
+A185W X L XREF=F
+A185W   L 1402                                          
+A185W X L XREF=F
+A185W   L 1410                                          
+A185W X L XREF=F
+A185W   L 1424.5      5/2                               
+A185W X L XREF=D
+A185W   L 1428                                          
+A185W X L XREF=F
+A185W   L 1441.2      1/2-,3/2-                         
+A185W X L XREF=CD
+A185W   L 1445                                          
+A185W X L XREF=F
+A185W   L 1448                                          
+A185W X L XREF=F
+A185W   L 1496.3      1/2-,3/2-                         
+A185W X L XREF=D
+ 185W   L 1501                                          
+ 185W X L XREF=EF
+A185W   L 1503.5                                        
+A185W X L XREF=CF
+A185W   L 1535.4                                        
+A185W X L XREF=CE
+ 185W   L 1542                                          
+ 185W X L XREF=F
+A185W   L 1561        (13/2+)                           
+A185W   L 1561                                          
+A185W X L XREF=F
+ 185W   L 1561        13/2+                             
+ 185W X L XREF=FG
+A185W   L 1572.3                                        
+A185W X L XREF=C
+A185W   L 1603                                          
+A185W X L XREF=F
+A185W   L 1623                                          
+A185W X L XREF=F
+A185W   L 1627                                          
+A185W X L XREF=F
+A185W   L 1646                                          
+A185W X L XREF=F
+A185W   L 1657                                          
+A185W X L XREF=C
+A185W   L 1663                                          
+A185W X L XREF=F
+A185W   L 1666        (9/2+)                            
+A185W X L XREF=FG
+A185W   L 1677                                          
+A185W X L XREF=F
+A185W   L 1683                                          
+A185W X L XREF=F
+A185W   L 1699                                          
+A185W X L XREF=F
+A185W   L 1701                                          
+A185W X L XREF=F
+A185W   L 1722                                          
+A185W X L XREF=F
+A185W   L 1728                                          
+A185W X L XREF=F
+A185W   L 1745                                          
+A185W X L XREF=F
+A185W   L 1800                                          
+A185W X L XREF=F
+A185W   L 1830                                          
+A185W X L XREF=F
+A185W   L 1845                                          
+A185W X L XREF=EF
+A185W   L 1846        (13/2+)                           
+A185W X L XREF=FG
+A185W   L 1860                                          
+A185W X L XREF=F
+A185W   L 1874                                          
+A185W X L XREF=F
+A185W   L 1880.8                                        
+A185W X L XREF=C
+A185W   L 1886                                          
+A185W X L XREF=F
+A185W   L 1901                                          
+A185W X L XREF=F
+A185W   L 1915                                          
+A185W X L XREF=F
+A185W   L 1937                                          
+A185W X L XREF=F
+A185W   L 1952                                          
+A185W X L XREF=F
+A185W   L 1959                                          
+A185W X L XREF=F
+A185W   L 1986                                          
+A185W X L XREF=F
+A185W   L 2031                                          
+A185W X L XREF=F
+A185W   L 2038                                          
+A185W X L XREF=F
+ 185W   L SN+2                                          
+ 185W X L XREF=CDE
+ 185W   L SN+24                                         
+ 185W X L XREF=D
