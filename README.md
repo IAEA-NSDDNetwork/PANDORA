@@ -1,5 +1,9 @@
 # Pandora
-Performs some basic physics checks for the ENSDF file. Pandora is part of the [ENSDF Analysis and Utility Programs](https://nds.iaea.org/public/ensdf_pgm/).
+Performs some basic physics checks for the ENSDF file. 
+
+Address any feedback to the Brookhaven National Nuclear Data Center  NNDC@BNL.GOV
+
+Pandora is part of the [ENSDF Analysis and Utility Programs](https://nds.iaea.org/public/ensdf_pgm/).
 
 ## Disclaimer
 
