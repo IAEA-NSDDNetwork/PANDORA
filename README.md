@@ -1,5 +1,5 @@
 # Pandora
-Performs some basic physics checks for the ENSDF file. 
+LEGACY CODE. Performs some basic physics checks for the ENSDF file. 
 
 Address any feedback to the Brookhaven National Nuclear Data Center  NNDC@BNL.GOV
 
